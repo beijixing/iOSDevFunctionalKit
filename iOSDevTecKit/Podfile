@@ -1,0 +1,22 @@
+platform :ios, '7.0'
+pod "AFNetworking", "~> 2.6.3"
+
+platform :ios, '7.0'
+pod "FMDB", "~> 2.5"
+
+platform :ios, '7.0'
+pod "SDWebImage", "~> 3.7.3"
+
+platform :ios, '7.0'
+pod "YYKit", "~> 0.9.4"
+
+pod 'MMDrawerController', '~> 0.6.0'
+
+pod 'EGOTableViewPullRefreshAndLoadMore', '~> 1.0.4'
+
+pod 'MBProgressHUD', '~> 0.9.1'
+
+pod 'MJRefresh', '~> 3.0.7'
+
+pod 'Masonry', '~> 0.6.3'
+

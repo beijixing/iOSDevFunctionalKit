@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="StaticAnnotationTest">
+            <connections>
+                <outlet property="_addressImageView" destination="wgi-HO-7LW" id="llV-X9-czK"/>
+                <outlet property="_addressLabel" destination="Eaw-O3-HFr" id="ZSU-sr-syO"/>
+                <outlet property="_mapView" destination="n3h-hF-Sdk" id="jet-Ko-pu3"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="n3h-hF-Sdk">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="6zE-dT-JHi"/>
+                    </connections>
+                </mapView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aDH-VX-A3Q">
+                    <rect key="frame" x="60" y="165" width="200" height="91"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="91" id="yCX-oK-MlK"/>
+                    </constraints>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="address_add_location.png" translatesAutoresizingMaskIntoConstraints="NO" id="wgi-HO-7LW">
+                    <rect key="frame" x="120" y="243" width="80" height="81"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="81" id="dea-7c-zac"/>
+                        <constraint firstAttribute="width" constant="80" id="rD2-sn-0FM"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="可以拖动地图修改位置" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vj4-BM-5Fp">
+                    <rect key="frame" x="100" y="222" width="121" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="qhz-5p-Bcn"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eaw-O3-HFr">
+                    <rect key="frame" x="60" y="174" width="200" height="47"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="47" id="MuN-Wj-f1R"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="n3h-hF-Sdk" secondAttribute="bottom" id="2H5-eC-VJs"/>
+                <constraint firstItem="Eaw-O3-HFr" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="60" id="71g-Ui-ANx"/>
+                <constraint firstItem="wgi-HO-7LW" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="7Ot-vb-ovs"/>
+                <constraint firstItem="wgi-HO-7LW" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="9V9-jz-k79"/>
+                <constraint firstItem="Vj4-BM-5Fp" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="100" id="Ntf-Yk-SvD"/>
+                <constraint firstAttribute="trailing" secondItem="n3h-hF-Sdk" secondAttribute="trailing" id="PEl-8B-z8H"/>
+                <constraint firstItem="n3h-hF-Sdk" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="VNf-JJ-sKL"/>
+                <constraint firstItem="aDH-VX-A3Q" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="60" id="XH8-CY-h1G"/>
+                <constraint firstItem="wgi-HO-7LW" firstAttribute="top" secondItem="aDH-VX-A3Q" secondAttribute="bottom" constant="-13" id="aO1-Pb-Zct"/>
+                <constraint firstItem="n3h-hF-Sdk" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="bQk-HZ-aRu"/>
+                <constraint firstAttribute="trailing" secondItem="aDH-VX-A3Q" secondAttribute="trailing" constant="60" id="eTO-Rp-7Fm"/>
+                <constraint firstAttribute="trailing" secondItem="Vj4-BM-5Fp" secondAttribute="trailing" constant="99" id="f6C-Hj-QLw"/>
+                <constraint firstAttribute="trailing" secondItem="Eaw-O3-HFr" secondAttribute="trailing" constant="60" id="g5h-6C-J16"/>
+                <constraint firstItem="wgi-HO-7LW" firstAttribute="top" secondItem="Eaw-O3-HFr" secondAttribute="bottom" constant="22" id="n2H-eT-2AM"/>
+                <constraint firstItem="wgi-HO-7LW" firstAttribute="top" secondItem="Vj4-BM-5Fp" secondAttribute="bottom" id="oIh-qZ-5KL"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="address_add_location.png" width="120" height="120"/>
+    </resources>
+</document>

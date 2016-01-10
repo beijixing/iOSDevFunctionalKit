@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MapTestVC">
+            <connections>
+                <outlet property="currentAddressLb" destination="u4j-Ie-L9n" id="IZJ-MP-XmZ"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fDb-Lo-Qte">
+                    <rect key="frame" x="79" y="163" width="163" height="38"/>
+                    <color key="backgroundColor" red="1" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="38" id="00f-r1-tHS"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <state key="normal" title="系统自带地图"/>
+                    <connections>
+                        <action selector="mapButtonClick:" destination="-1" eventType="touchUpInside" id="PLE-Uu-UYf"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cSZ-Aj-GLq">
+                    <rect key="frame" x="79" y="234" width="163" height="38"/>
+                    <color key="backgroundColor" red="1" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="38" id="b1c-7q-1t9"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <state key="normal" title="高德地图"/>
+                    <connections>
+                        <action selector="gaoDeMapButtonClick:" destination="-1" eventType="touchUpInside" id="kKy-cj-wbq"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="当前位置" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GHG-oT-Dqz">
+                    <rect key="frame" x="126" y="35" width="68" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="fF5-Zp-iFt"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="15" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u4j-Ie-L9n">
+                    <rect key="frame" x="0.0" y="58" width="312" height="97"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="97" id="jaH-bl-W4q"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="fDb-Lo-Qte" secondAttribute="trailing" constant="78" id="BsC-jL-ClS"/>
+                <constraint firstItem="GHG-oT-Dqz" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="35" id="F3g-om-XcE"/>
+                <constraint firstItem="cSZ-Aj-GLq" firstAttribute="top" secondItem="fDb-Lo-Qte" secondAttribute="bottom" constant="33" id="MAC-FB-yUq"/>
+                <constraint firstItem="GHG-oT-Dqz" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="126" id="Nkc-pp-909"/>
+                <constraint firstItem="cSZ-Aj-GLq" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="79" id="P3j-H7-QlJ"/>
+                <constraint firstItem="u4j-Ie-L9n" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="58" id="T1W-QH-aFe"/>
+                <constraint firstItem="fDb-Lo-Qte" firstAttribute="top" secondItem="u4j-Ie-L9n" secondAttribute="bottom" constant="8" id="Whv-FD-8mI"/>
+                <constraint firstItem="fDb-Lo-Qte" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="79" id="Y80-qq-8BU"/>
+                <constraint firstAttribute="trailing" secondItem="cSZ-Aj-GLq" secondAttribute="trailing" constant="78" id="cp8-5H-yMh"/>
+                <constraint firstAttribute="trailing" secondItem="GHG-oT-Dqz" secondAttribute="trailing" constant="126" id="e8U-dD-Fzy"/>
+                <constraint firstAttribute="trailing" secondItem="u4j-Ie-L9n" secondAttribute="trailing" constant="8" id="kkO-6h-62R"/>
+                <constraint firstItem="u4j-Ie-L9n" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="n7b-0S-00i"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+        </view>
+    </objects>
+</document>
