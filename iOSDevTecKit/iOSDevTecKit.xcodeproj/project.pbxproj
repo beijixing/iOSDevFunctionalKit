@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		0261E1168F2D90EF1048FC12 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E1F6CF9609D5AE3981E005F2 /* libPods.a */; };
+		86AFEBE11C4C7B6D0082BA25 /* arrow-left@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 86AFEBE01C4C7B6D0082BA25 /* arrow-left@2x.png */; };
+		86AFEBE91C4C7D0E0082BA25 /* PullDownMenu2.m in Sources */ = {isa = PBXBuildFile; fileRef = 86AFEBE41C4C7D0E0082BA25 /* PullDownMenu2.m */; };
+		86AFEBEA1C4C7D0E0082BA25 /* PullDownMenu2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 86AFEBE51C4C7D0E0082BA25 /* PullDownMenu2.xib */; };
+		86AFEBEB1C4C7D0E0082BA25 /* PullDownMenuTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 86AFEBE71C4C7D0E0082BA25 /* PullDownMenuTest.m */; };
+		86AFEBEC1C4C7D0E0082BA25 /* PullDownMenuTest.xib in Resources */ = {isa = PBXBuildFile; fileRef = 86AFEBE81C4C7D0E0082BA25 /* PullDownMenuTest.xib */; };
+		86AFEBF21C4C7D9B0082BA25 /* PullDownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 86AFEBF11C4C7D9B0082BA25 /* PullDownMenu.m */; };
 		F51D04041C1C006000519911 /* CoreAnimationTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F51D04021C1C006000519911 /* CoreAnimationTestVC.m */; };
 		F51D04051C1C006000519911 /* CoreAnimationTestVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F51D04031C1C006000519911 /* CoreAnimationTestVC.xib */; };
 		F51D04071C1C009B00519911 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F51D04061C1C009B00519911 /* QuartzCore.framework */; };
@@ -97,12 +103,6 @@
 		F56F24471C09E541009E3E4F /* PageViewVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F56F24451C09E541009E3E4F /* PageViewVC.xib */; };
 		F56F244B1C09E633009E3E4F /* CollectionViewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F56F24491C09E633009E3E4F /* CollectionViewVC.m */; };
 		F56F244C1C09E633009E3E4F /* CollectionViewVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = F56F244A1C09E633009E3E4F /* CollectionViewVC.xib */; };
-		F5ADA40A1C2AF29A00CDD67A /* PullDownMenuTest.m in Sources */ = {isa = PBXBuildFile; fileRef = F5ADA4081C2AF29A00CDD67A /* PullDownMenuTest.m */; };
-		F5ADA40B1C2AF29A00CDD67A /* PullDownMenuTest.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5ADA4091C2AF29A00CDD67A /* PullDownMenuTest.xib */; };
-		F5ADA40E1C2D74A300CDD67A /* PullDownMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = F5ADA40D1C2D74A300CDD67A /* PullDownMenu.m */; };
-		F5ADA4101C2D74C300CDD67A /* PullDownMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5ADA40F1C2D74C300CDD67A /* PullDownMenu.xib */; };
-		F5ADA4141C2D7AF800CDD67A /* DefinedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F5ADA4121C2D7AF800CDD67A /* DefinedCell.m */; };
-		F5ADA4151C2D7AF800CDD67A /* DefinedCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5ADA4131C2D7AF800CDD67A /* DefinedCell.xib */; };
 		F5ADA4171C2D8BE300CDD67A /* rightArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F5ADA4161C2D8BE300CDD67A /* rightArrow@2x.png */; };
 		F5AF47FE1C09397700972AAB /* ToolBox.m in Sources */ = {isa = PBXBuildFile; fileRef = F5AF47FB1C09397700972AAB /* ToolBox.m */; };
 		F5AF47FF1C09397700972AAB /* UIBlockButton.m in Sources */ = {isa = PBXBuildFile; fileRef = F5AF47FD1C09397700972AAB /* UIBlockButton.m */; };
@@ -116,6 +116,15 @@
 /* Begin PBXFileReference section */
 		1BDD3A52CADBFC66E0277436 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		4662701E92C22304E7E8D952 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		86AFEBE01C4C7B6D0082BA25 /* arrow-left@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow-left@2x.png"; sourceTree = "<group>"; };
+		86AFEBE31C4C7D0E0082BA25 /* PullDownMenu2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PullDownMenu2.h; sourceTree = "<group>"; };
+		86AFEBE41C4C7D0E0082BA25 /* PullDownMenu2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PullDownMenu2.m; sourceTree = "<group>"; };
+		86AFEBE51C4C7D0E0082BA25 /* PullDownMenu2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PullDownMenu2.xib; sourceTree = "<group>"; };
+		86AFEBE61C4C7D0E0082BA25 /* PullDownMenuTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PullDownMenuTest.h; sourceTree = "<group>"; };
+		86AFEBE71C4C7D0E0082BA25 /* PullDownMenuTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PullDownMenuTest.m; sourceTree = "<group>"; };
+		86AFEBE81C4C7D0E0082BA25 /* PullDownMenuTest.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PullDownMenuTest.xib; sourceTree = "<group>"; };
+		86AFEBF01C4C7D9B0082BA25 /* PullDownMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PullDownMenu.h; sourceTree = "<group>"; };
+		86AFEBF11C4C7D9B0082BA25 /* PullDownMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PullDownMenu.m; sourceTree = "<group>"; };
 		E1F6CF9609D5AE3981E005F2 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		F51D04011C1C006000519911 /* CoreAnimationTestVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreAnimationTestVC.h; sourceTree = "<group>"; };
 		F51D04021C1C006000519911 /* CoreAnimationTestVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreAnimationTestVC.m; sourceTree = "<group>"; };
@@ -236,15 +245,6 @@
 		F56F24481C09E633009E3E4F /* CollectionViewVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewVC.h; sourceTree = "<group>"; };
 		F56F24491C09E633009E3E4F /* CollectionViewVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewVC.m; sourceTree = "<group>"; };
 		F56F244A1C09E633009E3E4F /* CollectionViewVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionViewVC.xib; sourceTree = "<group>"; };
-		F5ADA4071C2AF29A00CDD67A /* PullDownMenuTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PullDownMenuTest.h; sourceTree = "<group>"; };
-		F5ADA4081C2AF29A00CDD67A /* PullDownMenuTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PullDownMenuTest.m; sourceTree = "<group>"; };
-		F5ADA4091C2AF29A00CDD67A /* PullDownMenuTest.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PullDownMenuTest.xib; sourceTree = "<group>"; };
-		F5ADA40C1C2D74A300CDD67A /* PullDownMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PullDownMenu.h; sourceTree = "<group>"; };
-		F5ADA40D1C2D74A300CDD67A /* PullDownMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PullDownMenu.m; sourceTree = "<group>"; };
-		F5ADA40F1C2D74C300CDD67A /* PullDownMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PullDownMenu.xib; sourceTree = "<group>"; };
-		F5ADA4111C2D7AF800CDD67A /* DefinedCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DefinedCell.h; sourceTree = "<group>"; };
-		F5ADA4121C2D7AF800CDD67A /* DefinedCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DefinedCell.m; sourceTree = "<group>"; };
-		F5ADA4131C2D7AF800CDD67A /* DefinedCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DefinedCell.xib; sourceTree = "<group>"; };
 		F5ADA4161C2D8BE300CDD67A /* rightArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "rightArrow@2x.png"; sourceTree = "<group>"; };
 		F5AF47F91C09397700972AAB /* CONST.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CONST.h; path = iOSDevTecKit/CONST.h; sourceTree = SOURCE_ROOT; };
 		F5AF47FA1C09397700972AAB /* ToolBox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ToolBox.h; path = iOSDevTecKit/ToolBox.h; sourceTree = SOURCE_ROOT; };
@@ -302,6 +302,21 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		86AFEBE21C4C7CD20082BA25 /* PullDownMenuTest */ = {
+			isa = PBXGroup;
+			children = (
+				86AFEBE31C4C7D0E0082BA25 /* PullDownMenu2.h */,
+				86AFEBE41C4C7D0E0082BA25 /* PullDownMenu2.m */,
+				86AFEBE51C4C7D0E0082BA25 /* PullDownMenu2.xib */,
+				86AFEBE61C4C7D0E0082BA25 /* PullDownMenuTest.h */,
+				86AFEBE71C4C7D0E0082BA25 /* PullDownMenuTest.m */,
+				86AFEBE81C4C7D0E0082BA25 /* PullDownMenuTest.xib */,
+				86AFEBF01C4C7D9B0082BA25 /* PullDownMenu.h */,
+				86AFEBF11C4C7D9B0082BA25 /* PullDownMenu.m */,
+			);
+			path = PullDownMenuTest;
+			sourceTree = "<group>";
+		};
 		F51D04001C1C002C00519911 /* CoreAnimationTest */ = {
 			isa = PBXGroup;
 			children = (
@@ -345,15 +360,7 @@
 				F52C382F1BE8FDD000C57DE8 /* MainViewController.m */,
 				F52C38301BE8FDD000C57DE8 /* MainViewController.xib */,
 				F5ED57E11C2ADD1E002C8509 /* SelfDefineView.xib */,
-				F5ADA40C1C2D74A300CDD67A /* PullDownMenu.h */,
-				F5ADA40D1C2D74A300CDD67A /* PullDownMenu.m */,
-				F5ADA40F1C2D74C300CDD67A /* PullDownMenu.xib */,
-				F5ADA4071C2AF29A00CDD67A /* PullDownMenuTest.h */,
-				F5ADA4081C2AF29A00CDD67A /* PullDownMenuTest.m */,
-				F5ADA4091C2AF29A00CDD67A /* PullDownMenuTest.xib */,
-				F5ADA4111C2D7AF800CDD67A /* DefinedCell.h */,
-				F5ADA4121C2D7AF800CDD67A /* DefinedCell.m */,
-				F5ADA4131C2D7AF800CDD67A /* DefinedCell.xib */,
+				86AFEBE21C4C7CD20082BA25 /* PullDownMenuTest */,
 				F5CA49F01C3C17D8008C57AA /* SearchControllerTest.h */,
 				F5CA49F11C3C17D8008C57AA /* SearchControllerTest.m */,
 				F5CA49F21C3C17D8008C57AA /* SearchControllerTest.xib */,
@@ -394,6 +401,7 @@
 				F5ADA4161C2D8BE300CDD67A /* rightArrow@2x.png */,
 				F554760D1C14442B000E196E /* anjuke_icon_itis_position.png */,
 				F554760E1C14442B000E196E /* anjuke_icon_itis_position@2x.png */,
+				86AFEBE01C4C7B6D0082BA25 /* arrow-left@2x.png */,
 				F55475FB1C134C97000E196E /* address_add_location.png */,
 				F52C38661BE90B4600C57DE8 /* header_i3@2x.png */,
 				F52C38671BE90B4600C57DE8 /* header_i3@3x.png */,
@@ -666,16 +674,15 @@
 				F52C38651BE908A100C57DE8 /* bottom_menu_i4@3x.png in Resources */,
 				F52C38601BE908A100C57DE8 /* bottom_menu_i3@2x.png in Resources */,
 				F55476101C14442B000E196E /* anjuke_icon_itis_position@2x.png in Resources */,
-				F5ADA4151C2D7AF800CDD67A /* DefinedCell.xib in Resources */,
 				F52C38641BE908A100C57DE8 /* bottom_menu_i4@2x.png in Resources */,
 				F52C382C1BE7BA7D00C57DE8 /* BaseViewController.xib in Resources */,
+				86AFEBEA1C4C7D0E0082BA25 /* PullDownMenu2.xib in Resources */,
 				F52C385C1BE908A100C57DE8 /* bottom_menu_i2@2x.png in Resources */,
 				F55476251C14444D000E196E /* wl_map_icon_1.png in Resources */,
 				F52C38591BE908A100C57DE8 /* bottom_menu_i1@3x.png in Resources */,
 				F56F24321C09E2DD009E3E4F /* FMDBVC.xib in Resources */,
 				F55476281C14444D000E196E /* wl_map_icon_4@2x.png in Resources */,
 				F52C38441BE906A800C57DE8 /* DelegateTestVC.xib in Resources */,
-				F5ADA4101C2D74C300CDD67A /* PullDownMenu.xib in Resources */,
 				F52C385A1BE908A100C57DE8 /* bottom_menu_i2_active@2x.png in Resources */,
 				F554761F1C14444D000E196E /* anjuke_icon_to_position.png in Resources */,
 				F52C381A1BE7B98400C57DE8 /* Assets.xcassets in Resources */,
@@ -700,7 +707,6 @@
 				F55476221C14444D000E196E /* anjuke_icon_to_position1@2x.png in Resources */,
 				F5CA49F41C3C17D8008C57AA /* SearchControllerTest.xib in Resources */,
 				F56F24371C09E2F9009E3E4F /* SDWebImageTest.xib in Resources */,
-				F5ADA40B1C2AF29A00CDD67A /* PullDownMenuTest.xib in Resources */,
 				F554762A1C14444D000E196E /* wl_map_icon_position_press@2x.png in Resources */,
 				F52C385B1BE908A100C57DE8 /* bottom_menu_i2_active@3x.png in Resources */,
 				F55475FC1C134C97000E196E /* address_add_location.png in Resources */,
@@ -711,7 +717,9 @@
 				F52C38581BE908A100C57DE8 /* bottom_menu_i1@2x.png in Resources */,
 				F5ADA4171C2D8BE300CDD67A /* rightArrow@2x.png in Resources */,
 				F55476261C14444D000E196E /* wl_map_icon_1@2x.png in Resources */,
+				86AFEBEC1C4C7D0E0082BA25 /* PullDownMenuTest.xib in Resources */,
 				F55476B21C181B70000E196E /* DrawerContrllerTest.xib in Resources */,
+				86AFEBE11C4C7B6D0082BA25 /* arrow-left@2x.png in Resources */,
 				F554760F1C14442B000E196E /* anjuke_icon_itis_position.png in Resources */,
 				F52C385D1BE908A100C57DE8 /* bottom_menu_i2@3x.png in Resources */,
 				F52C383F1BE9068900C57DE8 /* BlockTestVC.xib in Resources */,
@@ -790,10 +798,10 @@
 				F55476A91C15DD22000E196E /* GaoDeMapVC.m in Sources */,
 				F56F244B1C09E633009E3E4F /* CollectionViewVC.m in Sources */,
 				F52C382B1BE7BA7D00C57DE8 /* BaseViewController.m in Sources */,
+				86AFEBE91C4C7D0E0082BA25 /* PullDownMenu2.m in Sources */,
 				F56F24221C09CDD2009E3E4F /* ProvinceViewController.m in Sources */,
 				F52C38151BE7B98400C57DE8 /* main.m in Sources */,
 				F56F24411C09E526009E3E4F /* ScrollViewVC.m in Sources */,
-				F5ADA40E1C2D74A300CDD67A /* PullDownMenu.m in Sources */,
 				F56F242C1C09E2C6009E3E4F /* AFNetworkingVC.m in Sources */,
 				F56F24311C09E2DD009E3E4F /* FMDBVC.m in Sources */,
 				F5AF47FF1C09397700972AAB /* UIBlockButton.m in Sources */,
@@ -802,16 +810,16 @@
 				F55476091C143EF7000E196E /* CalloutAnnotation.m in Sources */,
 				F554760C1C143FBD000E196E /* CalloutAnnotationView.m in Sources */,
 				F56F243D1C09E4C9009E3E4F /* UIView+MyLayerView.m in Sources */,
+				86AFEBEB1C4C7D0E0082BA25 /* PullDownMenuTest.m in Sources */,
+				86AFEBF21C4C7D9B0082BA25 /* PullDownMenu.m in Sources */,
 				F56F24461C09E541009E3E4F /* PageViewVC.m in Sources */,
 				F55475F51C133713000E196E /* ZAnnotation.m in Sources */,
 				F52C383E1BE9068900C57DE8 /* BlockTestVC.m in Sources */,
 				F52C38351BE9059D00C57DE8 /* ZTabBarController.m in Sources */,
 				F5AF47FE1C09397700972AAB /* ToolBox.m in Sources */,
-				F5ADA4141C2D7AF800CDD67A /* DefinedCell.m in Sources */,
 				F55476FE1C1836D7000E196E /* MapTestVC.m in Sources */,
 				F56F24271C09D530009E3E4F /* ProvinceVC2.m in Sources */,
 				F56F243C1C09E4C9009E3E4F /* CALayer+XibConfiguration.m in Sources */,
-				F5ADA40A1C2AF29A00CDD67A /* PullDownMenuTest.m in Sources */,
 				F52C38391BE9065E00C57DE8 /* TableViewTestVC.m in Sources */,
 				F52C38431BE906A800C57DE8 /* DelegateTestVC.m in Sources */,
 				F5CA49F31C3C17D8008C57AA /* SearchControllerTest.m in Sources */,

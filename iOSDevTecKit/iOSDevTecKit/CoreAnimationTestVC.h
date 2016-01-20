@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CoreAnimationTestVC : UIViewController<UITableViewDataSource, UITableViewDelegate>
+@interface CoreAnimationTestVC : UIViewController
 
 @property (weak, nonatomic) IBOutlet UITableView *dataTableView;
 

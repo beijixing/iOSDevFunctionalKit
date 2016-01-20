@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 
 typedef void(^GetSelectedTextBlock)(NSString *);
-
-@interface PullDownMenu : UIView<UITableViewDataSource, UITableViewDelegate>
+typedef void(^ShowListViewEventBlock)(void);
+typedef void(^HideListViewEventBlock)(void);
+@interface PullDownMenu2 : UIView<UITableViewDataSource, UITableViewDelegate>
 + (instancetype)menu;
 @property (weak, nonatomic) IBOutlet UILabel *title;
 @property (weak, nonatomic) IBOutlet UITableView *tableview;
@@ -18,4 +19,11 @@ typedef void(^GetSelectedTextBlock)(NSString *);
 @property (nonatomic, copy) GetSelectedTextBlock getSelectedText;
 @property (nonatomic) CGRect showListFrame;
 @property (nonatomic) CGRect hideListFrame;
+@property (nonatomic, copy) ShowListViewEventBlock showListViewEvent;
+@property (nonatomic, copy) HideListViewEventBlock hideListViewEvent;
+@property (nonatomic, assign) BOOL state;
+@property (nonatomic, strong) NSArray *dataSoure;
+@property (strong, nonatomic) IBOutlet UIImageView *smallArrowImage;
+
+-(void)showAmallImageView:(BOOL)show;
 @end
