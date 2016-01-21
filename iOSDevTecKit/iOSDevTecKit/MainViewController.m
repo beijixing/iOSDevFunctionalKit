@@ -42,6 +42,7 @@
                    @"SearchControllerTest",
                    @"FoldScrollViewItemAnimation",
                    @"ModalTestVC",
+                   @"VideoPlayTestVC",
                    nil ];
 }
 

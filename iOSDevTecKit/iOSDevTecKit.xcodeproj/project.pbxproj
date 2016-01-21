@@ -12,6 +12,12 @@
 		8628B9461C4F79FA009187E2 /* AnimationAction.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8628B9441C4F79FA009187E2 /* AnimationAction.xib */; };
 		8628B94B1C508C9C009187E2 /* ModalTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8628B9491C508C9C009187E2 /* ModalTestVC.m */; };
 		8628B94C1C508C9C009187E2 /* ModalTestVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8628B94A1C508C9C009187E2 /* ModalTestVC.xib */; };
+		8628B9511C50C13C009187E2 /* VideoPlayTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8628B94F1C50C13C009187E2 /* VideoPlayTestVC.m */; };
+		8628B9521C50C13C009187E2 /* VideoPlayTestVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8628B9501C50C13C009187E2 /* VideoPlayTestVC.xib */; };
+		8628B9541C50C152009187E2 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8628B9531C50C152009187E2 /* AVFoundation.framework */; };
+		8628B9561C50C21D009187E2 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8628B9551C50C21D009187E2 /* MediaPlayer.framework */; };
+		8628B9581C50C234009187E2 /* MediaToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8628B9571C50C234009187E2 /* MediaToolbox.framework */; };
+		8628B95A1C50C82B009187E2 /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8628B9591C50C82B009187E2 /* AVKit.framework */; };
 		86AFEBE11C4C7B6D0082BA25 /* arrow-left@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 86AFEBE01C4C7B6D0082BA25 /* arrow-left@2x.png */; };
 		86AFEBE91C4C7D0E0082BA25 /* PullDownMenu2.m in Sources */ = {isa = PBXBuildFile; fileRef = 86AFEBE41C4C7D0E0082BA25 /* PullDownMenu2.m */; };
 		86AFEBEA1C4C7D0E0082BA25 /* PullDownMenu2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 86AFEBE51C4C7D0E0082BA25 /* PullDownMenu2.xib */; };
@@ -130,6 +136,13 @@
 		8628B9481C508C9C009187E2 /* ModalTestVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModalTestVC.h; sourceTree = "<group>"; };
 		8628B9491C508C9C009187E2 /* ModalTestVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModalTestVC.m; sourceTree = "<group>"; };
 		8628B94A1C508C9C009187E2 /* ModalTestVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ModalTestVC.xib; sourceTree = "<group>"; };
+		8628B94E1C50C13C009187E2 /* VideoPlayTestVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoPlayTestVC.h; sourceTree = "<group>"; };
+		8628B94F1C50C13C009187E2 /* VideoPlayTestVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoPlayTestVC.m; sourceTree = "<group>"; };
+		8628B9501C50C13C009187E2 /* VideoPlayTestVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VideoPlayTestVC.xib; sourceTree = "<group>"; };
+		8628B9531C50C152009187E2 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		8628B9551C50C21D009187E2 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		8628B9571C50C234009187E2 /* MediaToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaToolbox.framework; path = System/Library/Frameworks/MediaToolbox.framework; sourceTree = SDKROOT; };
+		8628B9591C50C82B009187E2 /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
 		86AFEBE01C4C7B6D0082BA25 /* arrow-left@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow-left@2x.png"; sourceTree = "<group>"; };
 		86AFEBE31C4C7D0E0082BA25 /* PullDownMenu2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PullDownMenu2.h; sourceTree = "<group>"; };
 		86AFEBE41C4C7D0E0082BA25 /* PullDownMenu2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PullDownMenu2.m; sourceTree = "<group>"; };
@@ -284,6 +297,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8628B95A1C50C82B009187E2 /* AVKit.framework in Frameworks */,
+				8628B9581C50C234009187E2 /* MediaToolbox.framework in Frameworks */,
+				8628B9561C50C21D009187E2 /* MediaPlayer.framework in Frameworks */,
+				8628B9541C50C152009187E2 /* AVFoundation.framework in Frameworks */,
 				86AFEC3C1C4F25D40082BA25 /* MAMapKit.framework in Frameworks */,
 				F51D040B1C1C00B400519911 /* UIKit.framework in Frameworks */,
 				F51D04091C1C00AA00519911 /* Foundation.framework in Frameworks */,
@@ -301,6 +318,10 @@
 		610847DA4FB23C005825A174 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8628B9591C50C82B009187E2 /* AVKit.framework */,
+				8628B9571C50C234009187E2 /* MediaToolbox.framework */,
+				8628B9551C50C21D009187E2 /* MediaPlayer.framework */,
+				8628B9531C50C152009187E2 /* AVFoundation.framework */,
 				86AFEC311C4F223F0082BA25 /* MAMapKit.framework */,
 				F51D040A1C1C00B400519911 /* UIKit.framework */,
 				F51D04081C1C00AA00519911 /* Foundation.framework */,
@@ -331,6 +352,16 @@
 				8628B94A1C508C9C009187E2 /* ModalTestVC.xib */,
 			);
 			path = modalDialogTest;
+			sourceTree = "<group>";
+		};
+		8628B94D1C50C127009187E2 /* VideoTest */ = {
+			isa = PBXGroup;
+			children = (
+				8628B94E1C50C13C009187E2 /* VideoPlayTestVC.h */,
+				8628B94F1C50C13C009187E2 /* VideoPlayTestVC.m */,
+				8628B9501C50C13C009187E2 /* VideoPlayTestVC.xib */,
+			);
+			path = VideoTest;
 			sourceTree = "<group>";
 		};
 		86AFEBE21C4C7CD20082BA25 /* PullDownMenuTest */ = {
@@ -435,6 +466,7 @@
 				F52C382F1BE8FDD000C57DE8 /* MainViewController.m */,
 				F52C38301BE8FDD000C57DE8 /* MainViewController.xib */,
 				F5ED57E11C2ADD1E002C8509 /* SelfDefineView.xib */,
+				8628B94D1C50C127009187E2 /* VideoTest */,
 				8628B9471C508390009187E2 /* modalDialogTest */,
 				86AFEC0D1C4F1FA30082BA25 /* MapTest */,
 				86AFEC071C4F1F110082BA25 /* AnimationTest */,
@@ -773,6 +805,7 @@
 				86AFEBEC1C4C7D0E0082BA25 /* PullDownMenuTest.xib in Resources */,
 				F55476B21C181B70000E196E /* DrawerContrllerTest.xib in Resources */,
 				86AFEBE11C4C7B6D0082BA25 /* arrow-left@2x.png in Resources */,
+				8628B9521C50C13C009187E2 /* VideoPlayTestVC.xib in Resources */,
 				F554760F1C14442B000E196E /* anjuke_icon_itis_position.png in Resources */,
 				F52C385D1BE908A100C57DE8 /* bottom_menu_i2@3x.png in Resources */,
 				F52C383F1BE9068900C57DE8 /* BlockTestVC.xib in Resources */,
@@ -869,6 +902,7 @@
 				8628B9451C4F79FA009187E2 /* AnimationAction.m in Sources */,
 				F56F24461C09E541009E3E4F /* PageViewVC.m in Sources */,
 				86AFEC2B1C4F215D0082BA25 /* StaticAnnotationTest.m in Sources */,
+				8628B9511C50C13C009187E2 /* VideoPlayTestVC.m in Sources */,
 				F52C383E1BE9068900C57DE8 /* BlockTestVC.m in Sources */,
 				F52C38351BE9059D00C57DE8 /* ZTabBarController.m in Sources */,
 				F5AF47FE1C09397700972AAB /* ToolBox.m in Sources */,
