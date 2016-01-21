@@ -40,6 +40,8 @@
                    @"CoreAnimationTestVC",
                    @"PullDownMenuTest",
                    @"SearchControllerTest",
+                   @"FoldScrollViewItemAnimation",
+                   @"ModalTestVC",
                    nil ];
 }
 
