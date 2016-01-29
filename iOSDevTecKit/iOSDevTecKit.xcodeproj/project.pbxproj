@@ -18,6 +18,7 @@
 		8628B9561C50C21D009187E2 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8628B9551C50C21D009187E2 /* MediaPlayer.framework */; };
 		8628B9581C50C234009187E2 /* MediaToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8628B9571C50C234009187E2 /* MediaToolbox.framework */; };
 		8628B95A1C50C82B009187E2 /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8628B9591C50C82B009187E2 /* AVKit.framework */; };
+		86995F841C5B648B00254094 /* macol.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 86995F831C5B648B00254094 /* macol.mp4 */; };
 		86AFEBE11C4C7B6D0082BA25 /* arrow-left@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 86AFEBE01C4C7B6D0082BA25 /* arrow-left@2x.png */; };
 		86AFEBE91C4C7D0E0082BA25 /* PullDownMenu2.m in Sources */ = {isa = PBXBuildFile; fileRef = 86AFEBE41C4C7D0E0082BA25 /* PullDownMenu2.m */; };
 		86AFEBEA1C4C7D0E0082BA25 /* PullDownMenu2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 86AFEBE51C4C7D0E0082BA25 /* PullDownMenu2.xib */; };
@@ -143,6 +144,7 @@
 		8628B9551C50C21D009187E2 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		8628B9571C50C234009187E2 /* MediaToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaToolbox.framework; path = System/Library/Frameworks/MediaToolbox.framework; sourceTree = SDKROOT; };
 		8628B9591C50C82B009187E2 /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
+		86995F831C5B648B00254094 /* macol.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = macol.mp4; sourceTree = "<group>"; };
 		86AFEBE01C4C7B6D0082BA25 /* arrow-left@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow-left@2x.png"; sourceTree = "<group>"; };
 		86AFEBE31C4C7D0E0082BA25 /* PullDownMenu2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PullDownMenu2.h; sourceTree = "<group>"; };
 		86AFEBE41C4C7D0E0082BA25 /* PullDownMenu2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PullDownMenu2.m; sourceTree = "<group>"; };
@@ -504,6 +506,7 @@
 		F52C38451BE9088300C57DE8 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				86995F831C5B648B00254094 /* macol.mp4 */,
 				F5ADA4161C2D8BE300CDD67A /* rightArrow@2x.png */,
 				F554760D1C14442B000E196E /* anjuke_icon_itis_position.png */,
 				F554760E1C14442B000E196E /* anjuke_icon_itis_position@2x.png */,
@@ -724,6 +727,7 @@
 				TargetAttributes = {
 					F52C380F1BE7B98400C57DE8 = {
 						CreatedOnToolsVersion = 7.0.1;
+						DevelopmentTeam = 7P7NH6349M;
 					};
 				};
 			};
@@ -816,6 +820,7 @@
 				F554762B1C14444D000E196E /* wl_map_icon_position.png in Resources */,
 				F56F242D1C09E2C6009E3E4F /* AFNetworkingVC.xib in Resources */,
 				86AFEC2A1C4F215D0082BA25 /* MapViewTestVC.xib in Resources */,
+				86995F841C5B648B00254094 /* macol.mp4 in Resources */,
 				F55476231C14444D000E196E /* wl_map_icon_1_press.png in Resources */,
 				F55476201C14444D000E196E /* anjuke_icon_to_position@2x.png in Resources */,
 				F55476271C14444D000E196E /* wl_map_icon_4.png in Resources */,
@@ -1018,6 +1023,7 @@
 			baseConfigurationReference = 4662701E92C22304E7E8D952 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: chengcheng li (GVPZPKD7K8)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1027,7 +1033,7 @@
 				INFOPLIST_FILE = iOSDevTecKit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "${SRCROOT}/**";
-				PRODUCT_BUNDLE_IDENTIFIER = zgl.iOSDevTecKit;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zgl.iOSDevTecKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				USER_HEADER_SEARCH_PATHS = "${SRCROOT}/**";
 			};
@@ -1038,6 +1044,7 @@
 			baseConfigurationReference = 1BDD3A52CADBFC66E0277436 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: chengcheng li (GVPZPKD7K8)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1047,7 +1054,7 @@
 				INFOPLIST_FILE = iOSDevTecKit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "${SRCROOT}/**";
-				PRODUCT_BUNDLE_IDENTIFIER = zgl.iOSDevTecKit;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zgl.iOSDevTecKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				USER_HEADER_SEARCH_PATHS = "${SRCROOT}/**";
 			};

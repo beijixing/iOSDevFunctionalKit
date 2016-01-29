@@ -46,7 +46,12 @@
 }
 
 - (void)openLocalMovie {
-    
+    AVPlayerViewController *movieController = [[AVPlayerViewController alloc] init];
+    NSString *videoPath = [[NSBundle mainBundle]pathForResource:@"macol" ofType:@"mp4"];
+    AVPlayer *player = [AVPlayer playerWithURL:[NSURL fileURLWithPath:videoPath]];
+    movieController.player = player;
+    [self presentViewController:movieController animated:YES completion:^{
+    }];
 }
 
 /*
