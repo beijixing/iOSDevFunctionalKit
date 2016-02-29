@@ -354,9 +354,7 @@
 				F5ADA4111C2D7AF800CDD67A /* DefinedCell.h */,
 				F5ADA4121C2D7AF800CDD67A /* DefinedCell.m */,
 				F5ADA4131C2D7AF800CDD67A /* DefinedCell.xib */,
-				F5CA49F01C3C17D8008C57AA /* SearchControllerTest.h */,
-				F5CA49F11C3C17D8008C57AA /* SearchControllerTest.m */,
-				F5CA49F21C3C17D8008C57AA /* SearchControllerTest.xib */,
+				F5CA49F51C427D2B008C57AA /* SearchControllerTest */,
 				F51D04001C1C002C00519911 /* CoreAnimationTest */,
 				F55476AD1C181B43000E196E /* MMDrawerControllerTest */,
 				F55475E91C131EB0000E196E /* MapKitTest */,
@@ -601,6 +599,16 @@
 				F56F243B1C09E4C9009E3E4F /* UIView+MyLayerView.m */,
 			);
 			path = Categories;
+			sourceTree = "<group>";
+		};
+		F5CA49F51C427D2B008C57AA /* SearchControllerTest */ = {
+			isa = PBXGroup;
+			children = (
+				F5CA49F11C3C17D8008C57AA /* SearchControllerTest.m */,
+				F5CA49F01C3C17D8008C57AA /* SearchControllerTest.h */,
+				F5CA49F21C3C17D8008C57AA /* SearchControllerTest.xib */,
+			);
+			name = SearchControllerTest;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
