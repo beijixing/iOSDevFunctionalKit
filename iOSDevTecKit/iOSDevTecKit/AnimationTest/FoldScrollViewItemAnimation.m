@@ -90,7 +90,7 @@ typedef void(^animComplete)(BOOL finished);
 - (void)resetScrollItemFrame {
     int i = 0;
     for (UIView *view in _scrollViewItemArr) {
-        [UIView animateWithDuration:0.1 delay:i*0.1 options:UIViewAnimationOptionCurveEaseIn animations:^{
+        [UIView animateWithDuration:0.1 delay:i*0.05 options:UIViewAnimationOptionCurveEaseIn animations:^{
             if (view) {
                 view.frame = CGRectMake(0, i*60, 320, 183);
             }
@@ -135,7 +135,7 @@ typedef void(^animComplete)(BOOL finished);
     int i = 0;
     for (NSInteger j = _scrollViewItemArr.count; j>0; j--) {
         UIView *view = [_scrollViewItemArr objectAtIndex:j-1];
-        [UIView animateWithDuration:0.1 delay:i*0.1 options:UIViewAnimationOptionCurveEaseIn animations:^{
+        [UIView animateWithDuration:0.1 delay:i*0.05 options:UIViewAnimationOptionCurveEaseIn animations:^{
             if (view) {
                 CGRect oldFrame = view.frame;
                 CGRect newFrame = CGRectMake(oldFrame.origin.x,oldFrame.origin.y+ (j-1)*123, oldFrame.size.width, oldFrame.size.height);

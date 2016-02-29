@@ -43,6 +43,8 @@
                    @"FoldScrollViewItemAnimation",
                    @"ModalTestVC",
                    @"VideoPlayTestVC",
+                   @"LineProgram",
+                   @"FunctionProgram",
                    nil ];
 }
 

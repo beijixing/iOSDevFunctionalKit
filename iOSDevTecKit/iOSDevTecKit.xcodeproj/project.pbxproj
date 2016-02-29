@@ -45,6 +45,8 @@
 		86AFEC3C1C4F25D40082BA25 /* MAMapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86AFEC311C4F223F0082BA25 /* MAMapKit.framework */; };
 		86AFEC401C4F2CF70082BA25 /* FoldScrollViewItemAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 86AFEC3E1C4F2CF70082BA25 /* FoldScrollViewItemAnimation.m */; };
 		86AFEC411C4F2CF70082BA25 /* FoldScrollViewItemAnimation.xib in Resources */ = {isa = PBXBuildFile; fileRef = 86AFEC3F1C4F2CF70082BA25 /* FoldScrollViewItemAnimation.xib */; };
+		86E9F4381C702D8E00772624 /* LineProgram.m in Sources */ = {isa = PBXBuildFile; fileRef = 86E9F4371C702D8E00772624 /* LineProgram.m */; };
+		86E9F43B1C705B8000772624 /* FunctionProgram.m in Sources */ = {isa = PBXBuildFile; fileRef = 86E9F43A1C705B8000772624 /* FunctionProgram.m */; };
 		F51D04071C1C009B00519911 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F51D04061C1C009B00519911 /* QuartzCore.framework */; };
 		F51D04091C1C00AA00519911 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F51D04081C1C00AA00519911 /* Foundation.framework */; };
 		F51D040B1C1C00B400519911 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F51D040A1C1C00B400519911 /* UIKit.framework */; };
@@ -185,6 +187,10 @@
 		86AFEC3D1C4F2CF70082BA25 /* FoldScrollViewItemAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoldScrollViewItemAnimation.h; sourceTree = "<group>"; };
 		86AFEC3E1C4F2CF70082BA25 /* FoldScrollViewItemAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoldScrollViewItemAnimation.m; sourceTree = "<group>"; };
 		86AFEC3F1C4F2CF70082BA25 /* FoldScrollViewItemAnimation.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FoldScrollViewItemAnimation.xib; sourceTree = "<group>"; };
+		86E9F4361C702D8E00772624 /* LineProgram.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineProgram.h; sourceTree = "<group>"; };
+		86E9F4371C702D8E00772624 /* LineProgram.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineProgram.m; sourceTree = "<group>"; };
+		86E9F4391C705B8000772624 /* FunctionProgram.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FunctionProgram.h; sourceTree = "<group>"; };
+		86E9F43A1C705B8000772624 /* FunctionProgram.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FunctionProgram.m; sourceTree = "<group>"; };
 		E1F6CF9609D5AE3981E005F2 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		F51D04061C1C009B00519911 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		F51D04081C1C00AA00519911 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -435,6 +441,17 @@
 			path = MapTest;
 			sourceTree = "<group>";
 		};
+		86E9F4351C702D5800772624 /* 编程思想 */ = {
+			isa = PBXGroup;
+			children = (
+				86E9F4361C702D8E00772624 /* LineProgram.h */,
+				86E9F4371C702D8E00772624 /* LineProgram.m */,
+				86E9F4391C705B8000772624 /* FunctionProgram.h */,
+				86E9F43A1C705B8000772624 /* FunctionProgram.m */,
+			);
+			path = "编程思想";
+			sourceTree = "<group>";
+		};
 		F52C38071BE7B98400C57DE8 = {
 			isa = PBXGroup;
 			children = (
@@ -468,6 +485,7 @@
 				F52C382F1BE8FDD000C57DE8 /* MainViewController.m */,
 				F52C38301BE8FDD000C57DE8 /* MainViewController.xib */,
 				F5ED57E11C2ADD1E002C8509 /* SelfDefineView.xib */,
+				86E9F4351C702D5800772624 /* 编程思想 */,
 				8628B94D1C50C127009187E2 /* VideoTest */,
 				8628B9471C508390009187E2 /* modalDialogTest */,
 				86AFEC0D1C4F1FA30082BA25 /* MapTest */,
@@ -913,8 +931,10 @@
 				F5AF47FE1C09397700972AAB /* ToolBox.m in Sources */,
 				86AFEC0B1C4F1F6A0082BA25 /* CoreAnimationTestVC.m in Sources */,
 				F56F24271C09D530009E3E4F /* ProvinceVC2.m in Sources */,
+				86E9F4381C702D8E00772624 /* LineProgram.m in Sources */,
 				86AFEC221C4F215D0082BA25 /* CalloutAnnotation.m in Sources */,
 				F56F243C1C09E4C9009E3E4F /* CALayer+XibConfiguration.m in Sources */,
+				86E9F43B1C705B8000772624 /* FunctionProgram.m in Sources */,
 				F52C38391BE9065E00C57DE8 /* TableViewTestVC.m in Sources */,
 				F52C38431BE906A800C57DE8 /* DelegateTestVC.m in Sources */,
 				F55476B11C181B70000E196E /* DrawerContrllerTest.m in Sources */,
