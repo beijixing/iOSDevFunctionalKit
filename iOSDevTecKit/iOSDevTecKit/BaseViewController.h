@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BaseViewController : UIViewController
+typedef void (^LeftBarButtonItemBlock)(void);
+typedef void (^RightBarButtonItemBlock)(void);
 
+@interface BaseViewController : UIViewController
+- (void)setLeftNavigationBarButtonItemWithImage:(NSString *)imageName andAction:(LeftBarButtonItemBlock)action;
+
+- (void)setRightNavigationBarButtonItemWithImage:(NSString *)imageName andAction:(RightBarButtonItemBlock)action;
 @end
