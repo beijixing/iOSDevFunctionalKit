@@ -39,10 +39,55 @@
     self.searchController.searchBar.delegate = self;
     self.searchController.searchBar.placeholder = @"搜索信息";
     self.searchController.searchBar.showsScopeBar = NO;
-    
-    
     [self.dataTableView reloadData];
+    
+    [self configSearchBar:self.searchController.searchBar];
 }
+
+- (void)configSearchBar:(UISearchBar *)searchBar {
+    searchBar.backgroundColor = [UIColor redColor];
+    NSArray *subviews = searchBar.subviews;
+    UIView *searchBarContentView = subviews[0];
+    searchBarContentView.tintColor = [UIColor redColor];
+    NSArray *contentSubviews = [searchBarContentView subviews];
+    NSLog(@"%@", [searchBar performSelector:@selector(recursiveDescription)]);
+
+    searchBar.tintColor = [UIColor blueColor];
+
+    [[UIBarButtonItem appearanceWhenContainedIn:[UISearchBar class], nil]
+     
+     setTitleTextAttributes:
+     
+     [NSDictionary dictionaryWithObjectsAndKeys:
+      
+      [UIColor whiteColor],
+      
+      UITextAttributeTextColor,
+      
+      [NSValue valueWithUIOffset:UIOffsetMake(0, 1)],
+      
+      UITextAttributeTextShadowOffset,nil]
+     
+     forState:UIControlStateNormal];
+
+    
+    for (UIView *subView in contentSubviews) {
+        if ([subView isKindOfClass:NSClassFromString(@"UISearchBarTextField")]) {
+            NSLog(@"UINavigationButton");
+            UITextField *searchTextField = (UITextField *)subView;
+            searchTextField.backgroundColor = [UIColor blueColor];
+        }else if ([subView isKindOfClass:NSClassFromString(@"UISearchBarBackground")])
+        {
+            UIView *backgroundView = (UITextField *)subView;
+            [backgroundView removeFromSuperview];//删除UISearchBarBackground后再设置searchBar.backgroundColor就可以显示设置的背景色了。
+//            backgroundView.tintColor = [UIColor greenColor];
+        }
+        
+    }
+    
+    
+    
+};
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     NSInteger count = 0;
