@@ -1,13 +1,13 @@
 //
-//  CONST.h
+//  MACROS.h
 //  zglTest
 //
 //  Created by 郑光龙 on 15/10/27.
 //  Copyright © 2015年 郑光龙. All rights reserved.
 //
 
-#ifndef CONST_h
-#define CONST_h
+#ifndef MACROS_h
+#define MACROS_h
 
 // iPad
 #define IsPad [UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad
@@ -60,4 +60,4 @@
 #define BPushSecretKey @"GFSIdnUmKG9uvPGVfi3KGDkmmokXvhWg"
 
 
-#endif /* CONST_h */
+#endif /* MACROS_h */

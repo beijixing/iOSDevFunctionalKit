@@ -16,7 +16,7 @@ xcode6以后新建项目时默认不创建PrefixHeader.h文件，需要我们自
 #define PrefixHeader_h
 
 #import <UIKit/UIKit.h>
-#import "CONST.h"
+#import "Macros.h"
 #import "ToolBox.h"
 #import "BaseViewController.h"
 #import <MAMapKit/MAMapKit.h>

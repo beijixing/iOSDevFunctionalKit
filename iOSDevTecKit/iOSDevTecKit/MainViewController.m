@@ -45,6 +45,7 @@
                    @"VideoPlayTestVC",
                    @"LineProgram",
                    @"FunctionProgram",
+                   @"PickerViewTestVC",
                    nil ];
 }
 

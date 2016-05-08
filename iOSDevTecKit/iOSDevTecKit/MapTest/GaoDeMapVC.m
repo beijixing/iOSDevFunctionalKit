@@ -10,6 +10,7 @@
 #import <MAMapKit/MAMapKit.h>
 #import <CoreLocation/CoreLocation.h>
 #import "APIKey.h"
+#import "WGS84TOGCJ02.h"
 @interface GaoDeMapVC ()<MAMapViewDelegate>
 {
 //    MAMapView *_maMapView;
@@ -49,12 +50,22 @@
 
 
 -(void)mapView:(MAMapView *)mapView regionDidChangeAnimated:(BOOL)animated {
-    CLLocationCoordinate2D centerCoord = mapView.region.center;
+   CLLocationCoordinate2D centerCoord = [mapView convertPoint:self.centerImage.center toCoordinateFromView:self.view];
+    
+    NSLog(@"1___centerCoord.lal = %f, centerCoord.long = %f", centerCoord.latitude, centerCoord.longitude);
+    if (![WGS84TOGCJ02 isLocationOutOfChina:centerCoord]) {
+        centerCoord = [WGS84TOGCJ02 transformFromWGSToGCJ:centerCoord];
+    }
+    
+    NSLog(@"2__centerCoord.lal = %f, centerCoord.long = %f", centerCoord.latitude, centerCoord.longitude);
+    
     CLLocation *location = [[CLLocation alloc] initWithLatitude:centerCoord.latitude longitude:centerCoord.longitude];
     
     [_geoCoder reverseGeocodeLocation:location completionHandler:^(NSArray<CLPlacemark *> * _Nullable placemarks, NSError * _Nullable error) {
         CLPlacemark *currPlaceMark = [placemarks firstObject];
         NSString *name = currPlaceMark.name;
+        
+        NSLog(@"name = %@", name);
         NSString *addressName = [NSString stringWithFormat:@"%@", (name == nil || [name isEqualToString:@"<null>"] )? @"" : name ];
         if (![addressName isEqualToString:@""]) {
             self.currentLocation.text = addressName;

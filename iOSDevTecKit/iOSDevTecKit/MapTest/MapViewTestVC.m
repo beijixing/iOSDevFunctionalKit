@@ -24,7 +24,7 @@
     _reverseGeoCoder = [[CLGeocoder alloc] init];
     [self initGui];
     
-    [self addAnnotation];
+//    [self addAnnotation];
 }
 
 #pragma mark --添加地图控件
@@ -49,9 +49,9 @@
         [_locationManager requestWhenInUseAuthorization];
     }
     
-    
+    _mapView.showsUserLocation = NO;
     //用户位置追踪（用户位置追踪用于标记用户当前位置，此时会调用定位服务）
-//    _mapView.userTrackingMode = MKUserTrackingModeFollow;
+    _mapView.userTrackingMode = MKUserTrackingModeFollow;
     
     //设置地图类型
     _mapView.mapType = MKMapTypeStandard;
@@ -73,9 +73,9 @@
         annotation.title = addressStr;
 //        annotation.subtitle = [addressDic valueForKey:@"Street"];
         annotation.coordinate = userLocation.location.coordinate;
-        annotation.image = [UIImage imageNamed:@"address_add_location"];
+        annotation.image = [UIImage imageNamed:@"anjuke_icon_itis_position"];
         
-//        [_mapView removeAnnotations:_mapView.annotations];//添加新的Annotation 之前移除掉先前添加的
+        [_mapView removeAnnotations:_mapView.annotations];//添加新的Annotation 之前移除掉先前添加的
         [_mapView addAnnotation:annotation];
     }];
 }
@@ -117,17 +117,16 @@
         annotationView.annotation = annotation;
         annotationView.image = ((ZAnnotation *)annotation).image;
         return annotationView;
-    }else if ([annotation isKindOfClass:[CalloutAnnotation class]]){
-            //对于作为弹出详情视图的自定义大头针视图无弹出交互功能（canShowCallout=false，这是默认值），在其中可以自由添加其他视图（因为它本身继承于UIView）
-        CalloutAnnotationView *calloutView=[CalloutAnnotationView calloutViewWithMapView:mapView];
-        calloutView.annotation = annotation;
-         NSLog(@"3");
-        return calloutView;
+//    }else if ([annotation isKindOfClass:[CalloutAnnotation class]]){
+//            //对于作为弹出详情视图的自定义大头针视图无弹出交互功能（canShowCallout=false，这是默认值），在其中可以自由添加其他视图（因为它本身继承于UIView）
+//        CalloutAnnotationView *calloutView=[CalloutAnnotationView calloutViewWithMapView:mapView];
+//        calloutView.annotation = annotation;
+//         NSLog(@"3");
+//        return calloutView;
     }else {
          NSLog(@"5");
         return nil;
     }
-
 }
 
 
@@ -141,15 +140,15 @@
         //点击一个大头针时移除其他弹出详情视图
 //        [self removeCustomAnnotation];
         //添加详情大头针，渲染此大头针视图时将此模型对象赋值给自定义大头针视图完成自动布局
-        CalloutAnnotation *calloutAnnotation=[[CalloutAnnotation alloc]init];
-        calloutAnnotation.image = annotation.image;
-        calloutAnnotation.icon=annotation.icon;
-        calloutAnnotation.detail=annotation.detail;
-        calloutAnnotation.rate=annotation.rate;
-        calloutAnnotation.coordinate=view.annotation.coordinate;
-        selectedCalloutAnnotation = calloutAnnotation;
-        selectedAnnotationView.hidden = YES;
-        [mapView addAnnotation:calloutAnnotation];
+//        CalloutAnnotation *calloutAnnotation=[[CalloutAnnotation alloc]init];
+//        calloutAnnotation.image = annotation.image;
+//        calloutAnnotation.icon=annotation.icon;
+//        calloutAnnotation.detail=annotation.detail;
+//        calloutAnnotation.rate=annotation.rate;
+//        calloutAnnotation.coordinate=view.annotation.coordinate;
+//        selectedCalloutAnnotation = calloutAnnotation;
+//        selectedAnnotationView.hidden = YES;
+//        [mapView addAnnotation:calloutAnnotation];
          NSLog(@"2");
     }
 }
@@ -157,12 +156,12 @@
 #pragma mark 取消选中时触发
 -(void)mapView:(MKMapView *)mapView didDeselectAnnotationView:(MKAnnotationView *)view{
 //    [self removeCustomAnnotation];
-    if (selectedCalloutAnnotation) {
-        [mapView removeAnnotation:selectedCalloutAnnotation];
-        selectedCalloutAnnotation = nil;
-    }
-    
-    selectedAnnotationView.hidden = NO;
+//    if (selectedCalloutAnnotation) {
+//        [mapView removeAnnotation:selectedCalloutAnnotation];
+//        selectedCalloutAnnotation = nil;
+//    }
+//    
+//    selectedAnnotationView.hidden = NO;
     NSLog(@"1");
 }
 
