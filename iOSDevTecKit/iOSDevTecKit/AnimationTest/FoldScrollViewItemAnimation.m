@@ -36,7 +36,7 @@ typedef void(^animComplete)(BOOL finished);
     [self setRightNavigationBarButtonItemWithImage:@"rightArrow" andAction:^{
         AnimationAction *animationAction = [[AnimationAction alloc] init];
 //        WeakSelf.definesPresentationContext = YES;
-        animationAction.view.backgroundColor = [UIColor colorWithRed:1.0f green:0 blue:0 alpha:0.5];
+        animationAction.view.backgroundColor = [UIColor colorWithRed:0.0f green:0 blue:0 alpha:0];
         /*
             模态视图关键部位
             animationAction.modalPresentationStyle = UIModalPresentationOverCurrentContext;
