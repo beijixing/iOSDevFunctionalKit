@@ -28,12 +28,13 @@
     
     //
     
-    [self.netImage sd_setImageWithPreviousCachedImageWithURL:[NSURL URLWithString:@"http://192.168.20.106/image/1.jpg"] andPlaceholderImage:[UIImage imageNamed:@"address_add_location"] options:SDWebImageRetryFailed progress:^(NSInteger receivedSize, NSInteger expectedSize) {
+    [self.netImage sd_setImageWithPreviousCachedImageWithURL:[NSURL URLWithString:@"http://202.99.45.60:8899/WO_UnicomPro/picture/report/rb_ydywrjkzb.png"] andPlaceholderImage:[UIImage imageNamed:@"address_add_location"] options:SDWebImageRetryFailed progress:^(NSInteger receivedSize, NSInteger expectedSize) {
         
-        
+        NSLog(@"expectedSize = %ld", expectedSize);
         
     } completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-        
+        NSLog(@"ERROR = %@", error);
+        _netImage.image = image;
     }];
     
    [NSTimer scheduledTimerWithTimeInterval:2.0 target:self selector:@selector(changeImage) userInfo:nil repeats:YES];
