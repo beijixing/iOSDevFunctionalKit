@@ -41,13 +41,21 @@ typedef enum : NSUInteger {
     for (int i = 0; i<10; i++) {
         UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
         int col = i%2; int row = i/2;
-        button.frame = CGRectMake(20+col*120, row*60, 100, 40);
+        button.frame = CGRectMake(100+col*120, 200+row*60, 100, 40);
         button.tag = i;
         [button setTitle:[NSString stringWithFormat:@"第%d个button", i] forState:UIControlStateNormal];
         [button addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
         button.backgroundColor = [UIColor blueColor];
         [self.view addSubview:button];
     }
+    
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    button.frame = CGRectMake(self.view.frame.size.width/2, self.view.frame.size.height-100, 100, 40);
+    button.tag = 10010;
+    [button setTitle:@"go back" forState:UIControlStateNormal];
+    [button addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
+    button.backgroundColor = [UIColor blueColor];
+    [self.view addSubview:button];
     
 //    self.view.backgroundColor = [UIColor greenColor];
     _graduallyView = [[UIView alloc] initWithFrame:CGRectMake(100, 400, 320, 50)];
@@ -121,6 +129,10 @@ typedef enum : NSUInteger {
         default:
             break;
     }
+    
+    if (sender.tag == 10010) {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }
 }
 
 - (void) transitionWithType:(NSString *) type WithSubtype:(NSString *) subtype ForView : (UIView *) view
@@ -134,7 +146,6 @@ typedef enum : NSUInteger {
     //设置运动type
     animation.type = type;
     if (subtype != nil) {
-        
         //设置子类
         animation.subtype = subtype;
     }

@@ -18,7 +18,7 @@ typedef enum
     VerticalAlignmentBottom,
 } VerticalAlignment;
 
-@interface ZLabel : UILabel
+@interface AlignVerticalLabel : UILabel
 {
 @private
     VerticalAlignment _verticalAlignment;

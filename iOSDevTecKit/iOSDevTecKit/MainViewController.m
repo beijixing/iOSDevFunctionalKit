@@ -12,7 +12,7 @@
 #define lastOpenSection 9999
 
 
-@interface MainViewController ()<TableHeaderViewDelegate>
+@interface MainViewController ()<TableHeaderViewDelegate, UITabBarControllerDelegate>
 {
     NSArray *_modulesName;
     NSMutableArray  *_sourceDataOpenState;
@@ -65,7 +65,7 @@
                                  @"SDWebImageTest",
                                 @[@"MapTestVC",@"StaticAnnotationTest"],
                                  @"MapTest",
-                                @[@"CoreAnimationTestVC", @"TransformTestVC"],
+                                @[@"CoreAnimationTestVC", @"TransformTestVC", @"CALayerTestVC", @"CATransactionTestVC", @"LayerHitTestVC", @"CABasicAnimationTestVC", @"CAKeyFrameAnimationVC", @"CAAnimationGroupTestVC", @"CATransitionTestVC"],
                                  @"CoreAnimationTest",
                                 @[@"PullDownMenuTest"],
                                  @"PullDownMenuTest",
@@ -138,6 +138,10 @@
      2 不需要使用import，因为类是动态加载的，只要存在就可以加载。
      */
     UIViewController *vc = [[NSClassFromString(viewControllerName) alloc] init];
+    if([vc isKindOfClass:[UITabBarController class]]){
+        UITabBarController *tabbarController = (UITabBarController *)vc;
+        tabbarController.delegate = self;
+    }
     [self.navigationController pushViewController:vc animated:YES];
 //    
 //    UIView *view = [[UIView alloc] init];
@@ -208,5 +212,20 @@
     [_sourceDataOpenState replaceObjectAtIndex:sectionIndex withObject:numberNew];
     _lastOpenedSection = sectionIndex;
     [self.modulesTable reloadData];
+}
+
+
+#pragma mark UITabBarControllerDelegate 
+- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController {
+//    CATransition *transition = [CATransition animation];
+//    transition.type = kCATransitionMoveIn;
+//    transition.subtype = kCATransitionFromBottom;
+//    [tabBarController.view.layer addAnimation:transition forKey:nil];
+
+    [UIView  transitionWithView:tabBarController.view duration:0.5 options:UIViewAnimationOptionTransitionFlipFromBottom animations:^{
+        
+    } completion:^(BOOL finished) {
+        
+    }];
 }
 @end

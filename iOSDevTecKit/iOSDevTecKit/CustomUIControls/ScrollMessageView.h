@@ -6,9 +6,6 @@
 //  Copyright © 2016年 zhilong. All rights reserved.
 //
 
-/*
-    横条单行滚动视图，用来显示广告或公告信息
-*/
 #import <UIKit/UIKit.h>
 @class ScrollMessageView;
 @protocol ScrollMessageViewDelegate <NSObject>

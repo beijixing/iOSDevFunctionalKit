@@ -7,8 +7,9 @@
 //
 
 #import "AFNetBase.h"
-//#import "WJHUD.h"
+#import "WJHUD.h"
 #import "AppDelegate.h"
+//#import "Macro.h"
 
 @implementation AFNetBase
 + (void)getDataFromServerWithHostUrl:(NSString *)url andParameters:(NSString *)parameter andResult:(void(^)(BOOL success, id object))resultBlock {
@@ -22,15 +23,15 @@
         fullUrl = url;
     }
     fullUrl = [fullUrl stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-    NSLog(@"fullUrl = %@", fullUrl);
+    DLog(@"fullUrl = %@", fullUrl);
     [manager GET:fullUrl parameters:nil success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
         resultBlock(YES, responseObject);
     } failure:^(AFHTTPRequestOperation * _Nullable operation, NSError * _Nonnull error) {
-        NSLog(@"error = %@", error);
+        DLog(@"error = %@", error);
         resultBlock(NO, error);
         if (error.code == -1001) {
             AppDelegate *delegate = [UIApplication sharedApplication].delegate;
-//            [WJHUD showText:@"网络不好，请稍后再试" onView:delegate.window];
+            [WJHUD showText:@"网络不好，请稍后再试" onView:delegate.window];
         }
     }];
 }
@@ -42,7 +43,7 @@
     [manager POST:url parameters:parameterDict success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
         resultBlock(YES, responseObject);
     } failure:^(AFHTTPRequestOperation * _Nullable operation, NSError * _Nonnull error) {
-        NSLog(@"error = %@", error);
+        DLog(@"error = %@", error);
         resultBlock(NO, error);
     }];
 }
@@ -50,14 +51,14 @@
 + (void)uploadImageWithUrl:(NSString *)fullUrl andParameters:(NSDictionary *)parameterDict andImagePath:(NSString *)imagePath andResult:(void(^)(BOOL success, id object))resultBlock {
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript", @"text/html", @"text/plain", @"image/jpeg", @"image/png",nil];
-    NSLog(@"fullUrl = %@", fullUrl);
+    DLog(@"fullUrl = %@", fullUrl);
     
     [manager POST:fullUrl parameters:parameterDict constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
         [formData appendPartWithFileData: UIImageJPEGRepresentation([UIImage imageWithContentsOfFile:imagePath], 1.0) name:@"FileData" fileName:imagePath mimeType:@"image/jpeg"];
     } success:^(AFHTTPRequestOperation * _Nonnull operation, id  _Nonnull responseObject) {
         resultBlock(YES, responseObject);
     } failure:^(AFHTTPRequestOperation * _Nullable operation, NSError * _Nonnull error) {
-        NSLog(@"error = %@", error);
+        DLog(@"error = %@", error);
         resultBlock(NO, error);
     }];
     
@@ -69,9 +70,11 @@
     AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
     NSURLRequest *request = [NSURLRequest requestWithURL:URL];
     NSURLSessionDownloadTask *downLoadTask = [manager downloadTaskWithRequest:request progress:nil destination:^NSURL *(NSURL *targetPath, NSURLResponse *response) {
+        
         return [NSURL fileURLWithPath:filePath];
     } completionHandler:^(NSURLResponse *response, NSURL *filePath, NSError *error) {
         // filePath就是你下载文件的位置，你可以解压，也可以直接拿来使用
+        NSLog(@"error.code = %ld", error.code);
         resultBlock(YES, filePath.path);
     }];
     

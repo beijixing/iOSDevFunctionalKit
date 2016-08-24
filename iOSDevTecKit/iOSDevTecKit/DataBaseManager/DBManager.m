@@ -7,7 +7,7 @@
 //
 
 #import "DBManager.h"
-//#import "Macro.h"
+#import "Macro.h"
 
 NSString *_dbPath = @"/data.sqlite";
 

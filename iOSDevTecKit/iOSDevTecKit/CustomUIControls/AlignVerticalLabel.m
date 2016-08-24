@@ -6,9 +6,9 @@
 //  Copyright © 2016年 zhilong. All rights reserved.
 //
 
-#import "ZLabel.h"
+#import "AlignVerticalLabel.h"
 
-@implementation ZLabel
+@implementation AlignVerticalLabel
 - (id)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
         self.verticalAlignment = VerticalAlignmentMiddle;

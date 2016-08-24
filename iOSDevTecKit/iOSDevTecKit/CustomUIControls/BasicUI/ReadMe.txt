@@ -1,0 +1,1 @@
+项目中导入UIView+CornerRaidus类别后，以CM开头的UI控件在XIB和StoryBoard中可以直接修改 圆角、边框和边框颜色。
