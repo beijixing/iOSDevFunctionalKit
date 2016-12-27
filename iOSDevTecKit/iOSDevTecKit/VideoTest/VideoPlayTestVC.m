@@ -11,6 +11,7 @@
 //#import <MediaToolbox/MediaToolbox.h>
 #import <AVKit/AVKit.h>
 #import <AVFoundation/AVFoundation.h>
+#import "SoundEffect.h"
 @interface VideoPlayTestVC ()
 
 @end
@@ -39,7 +40,7 @@
     }else if(btn.tag == 1) {
         [self openLocalMovie];
     }else if (btn.tag == 3) {
-        
+        [SoundEffect playWithSoundFile:@"videoRing.caf"];
     }
 }
 
@@ -60,6 +61,7 @@
     movieController.player = player;
     [self presentViewController:movieController animated:YES completion:^{
     }];
+    
 }
 
 

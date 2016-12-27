@@ -27,13 +27,15 @@
     maskLayer.contents = (__bridge id)[[UIImage imageNamed:@"180"] CGImage];
     maskLayer.contentsGravity = kCAGravityResizeAspect;
     
-    CABasicAnimation *basicAnim = [CABasicAnimation animationWithKeyPath:@"position"];
-    basicAnim.duration = 3.0;
-    [basicAnim setFromValue:[NSValue valueWithCGPoint:CGPointMake(80, 0)]];
-    [basicAnim setToValue:[NSValue valueWithCGPoint:CGPointMake(200, 100)]];
-    basicAnim.autoreverses = YES;
-    basicAnim.repeatCount = 10;
-    [maskLayer addAnimation:basicAnim forKey:@"position"];
+//    CABasicAnimation *basicAnim = [CABasicAnimation animationWithKeyPath:@"position"];
+//    basicAnim.duration = 3.0;
+//    [basicAnim setFromValue:[NSValue valueWithCGPoint:CGPointMake(80, 0)]];
+//    [basicAnim setToValue:[NSValue valueWithCGPoint:CGPointMake(200, 100)]];
+//    basicAnim.autoreverses = YES;
+//    basicAnim.repeatCount = 10;
+//    [maskLayer addAnimation:basicAnim forKey:@"position"];
+    
+    maskLayer.position = CGPointMake(200, 100);
     
     self.imageViewTest.layer.mask = maskLayer;
     

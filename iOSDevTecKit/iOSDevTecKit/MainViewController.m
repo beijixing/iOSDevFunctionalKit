@@ -51,11 +51,12 @@
                    @"VideoPlayer",
                    @"ProgramThaught",
                    @"PickerViewTest",
+                   @"CoreDataTest",
                    nil];
     _moduleViewControllerDict = [NSDictionary dictionaryWithObjectsAndKeys:
                                 @[@"ZTabBarController"],
                                  @"TabBarController",
-                                @[@"TableViewTestVC"],
+                                @[@"TableViewTestVC", @"LinkedTableTestVC"],
                                  @"TableView",
                                 @[@"BlockTestVC"],
                                  @"BlockTest",
@@ -81,6 +82,8 @@
                                  @"ProgramThaught",
                                 @[@"PickerViewTestVC"],
                                  @"PickerViewTest",
+                                @[@"TestCoreDataVC"],
+                                  @"CoreDataTest",
                                 nil];
     [self initSourceDataOpenState];
     [self setupTableview];

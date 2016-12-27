@@ -8,6 +8,9 @@
 //
 
 #import "CATransitionTestVC.h"
+#import "ShimmerLabel.h"
+#import "GifImageView.h"
+#import "GifView.h"
 
 @interface CATransitionTestVC ()
 @property (strong, nonatomic) IBOutlet UIImageView *testImageView;
@@ -22,6 +25,24 @@
     // Do any additional setup after loading the view from its nib.
     self.images = [NSArray arrayWithObjects:@"a.jpg", @"b.png", @"c.jpg", @"alien-spaceship.jpg",  nil];
     
+    ShimmerLabel *label = [[ShimmerLabel alloc] initWithFrame:CGRectMake(100, 300, 100, 40)];
+    [self.view addSubview:label];
+//    [label startShimming];
+    
+    NSString *fileStr = [[NSBundle mainBundle] pathForResource:@"test1" ofType:@"gif"];
+    NSURL *fileUrl = [NSURL fileURLWithPath:fileStr];
+
+    
+    GifImageView *gif1 = [[GifImageView alloc] initWithCenter:CGPointMake(100, 350) fileURL:fileUrl];
+    [gif1 startPlay];
+    gif1.backgroundColor = [UIColor greenColor];
+    [self.view addSubview:gif1];
+    
+    fileStr = [[NSBundle mainBundle] pathForResource:@"test1" ofType:@"gif"];
+    GifView *gif = [[GifView alloc] initWithFrame:CGRectMake(230, 350, 100, 100) filePath:fileStr];
+    [self.view addSubview:gif];
+
+
 }
 
 - (void)didReceiveMemoryWarning {
