@@ -12,13 +12,12 @@
 
 @required
 - (void)headerViewDidTaped:(BaseTableHeaderView *)tableHeaderView sectionIndex:(NSInteger)sectionIndex;
-
 @end
 
 @interface BaseTableHeaderView : UITableViewHeaderFooterView
 
-@property (nonatomic, copy) UIView *sectionTitleView;  //承载标题的view
-@property (nonatomic, copy) UIImageView *indicatorImgView;
+@property (nonatomic, strong) UIView *sectionTitleView;  //承载标题的view
+@property (nonatomic, strong) UIImage *indicatorImage;
 @property (nonatomic, copy) UILabel *titleLabel;  //  section标题
 @property (nonatomic, strong) UIColor *contentBGColor;   //  背景色
 @property (nonatomic, assign) BOOL isOpen;   //  当前section是否展开

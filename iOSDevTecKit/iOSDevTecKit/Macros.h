@@ -17,7 +17,7 @@
 #ifdef DEBUG
 #   define DLog(fmt, ...) NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);
 #else
-#   define DLog(...)
+#define DLog(...)
 #endif
 
 #define PATH_OF_APP_HOME    NSHomeDirectory()
@@ -33,7 +33,8 @@
 
 #define iOS_VERSION [[[UIDevice currentDevice] systemVersion] doubleValue]
 #define MAIN_COLOR  ColorWithRGB(140,181,48)
-
+#define SCALE_RATE (MainScreenWidth/320.0)   //以5s屏幕宽度为基准
+#define KRATE(rate) (SCALE_RATE > 1 ? SCALE_RATE*rate : SCALE_RATE)
 
 // 取得AppDelegate单利
 #define ShareApp ((AppDelegate *)[[UIApplication sharedApplication] delegate])

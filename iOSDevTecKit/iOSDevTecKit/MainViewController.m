@@ -9,6 +9,7 @@
 #import "MainViewController.h"
 #import "ZTabBarController.h"
 #import "TableHeaderView.h"
+#import "UIFactory.h"
 #define lastOpenSection 9999
 
 
@@ -62,11 +63,11 @@
                                  @"BlockTest",
                                 @[@"DelegateTestVC"],
                                  @"DelegateTest",
-                                @[@"SDWebImageTest"],
+                                @[@"SDWebImageTest", @"AnnotateImage"],
                                  @"SDWebImageTest",
                                 @[@"MapTestVC",@"StaticAnnotationTest"],
                                  @"MapTest",
-                                @[@"CoreAnimationTestVC", @"TransformTestVC", @"CALayerTestVC", @"CATransactionTestVC", @"LayerHitTestVC", @"CABasicAnimationTestVC", @"CAKeyFrameAnimationVC", @"CAAnimationGroupTestVC", @"CATransitionTestVC"],
+                                @[@"CoreAnimationTestVC", @"TransformTestVC", @"CALayerTestVC", @"CATransactionTestVC", @"LayerHitTestVC", @"CABasicAnimationTestVC", @"CAKeyFrameAnimationVC", @"CAAnimationGroupTestVC", @"CATransitionTestVC", @"CustomAnimationVC"],
                                  @"CoreAnimationTest",
                                 @[@"PullDownMenuTest"],
                                  @"PullDownMenuTest",
@@ -87,6 +88,7 @@
                                 nil];
     [self initSourceDataOpenState];
     [self setupTableview];
+
 }
 
 - (void)setupTableview {

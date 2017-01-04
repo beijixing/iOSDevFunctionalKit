@@ -10,7 +10,7 @@
 #import "MainViewController.h"
 #import <MAMapKit/MAMapKit.h>
 #import "APIKey.h"
-
+#import "KeyboardManager.h"
 
 @interface AppDelegate ()
 
@@ -30,6 +30,7 @@
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     
+    [IQKeyboardManager sharedManager].enable = YES;
     return YES;
     
 }

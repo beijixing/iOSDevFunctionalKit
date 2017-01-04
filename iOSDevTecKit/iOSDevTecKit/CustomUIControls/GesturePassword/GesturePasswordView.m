@@ -16,10 +16,8 @@
 
 @implementation GesturePasswordView {
     NSMutableArray * buttonArray;
-    
     CGPoint lineStartPoint;
     CGPoint lineEndPoint;
-    
 }
 //@synthesize imgView;
 

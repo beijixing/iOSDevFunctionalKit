@@ -44,17 +44,9 @@
 }
 
 - (void)setupTitileLabelFont:( UIFont *)font textColor:(UIColor *)color text:(NSString *)txt {
-    if (font){
-        self.titleLabel.font = font;
-    }
-    
-    if (color) {
-        self.titleLabel.textColor = color;
-    }
-    
-    if (txt) {
-        self.titleLabel.text = txt;
-    }
+    self.titleLabel.font = font;
+    self.titleLabel.textColor = color;
+    self.titleLabel.text = txt;
 }
 
 - (void)buttonClick:(UIButton *)sender {

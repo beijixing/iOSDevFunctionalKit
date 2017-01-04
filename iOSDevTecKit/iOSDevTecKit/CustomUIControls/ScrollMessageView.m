@@ -156,8 +156,6 @@
     }
     _messageTypeName = messageTypeName;
     _messageTypeLabel.text = _messageTypeName;
-    
-    
 }
 
 - (void)setContent:(NSString *)content {

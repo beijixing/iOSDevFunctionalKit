@@ -9,39 +9,18 @@
 #import "BaseTableHeaderView.h"
 #import "UIView+Additions.h"
 
+@interface BaseTableHeaderView()
+@property(nonatomic, strong) UIImageView *indicatorImgView;
+@property(nonatomic, strong) UIImageView *lineImageView;
+@end
+
 @implementation BaseTableHeaderView
-{
-    UIImageView *_lineImageView;
-}
 
 -(instancetype)initWithReuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithReuseIdentifier:reuseIdentifier];
     if (self) {
-        _sectionTitleView = [[UIView alloc] initWithFrame:CGRectZero];
-        _sectionTitleView.userInteractionEnabled = YES;
-        UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(sectionDidTaped:)];
-        [_sectionTitleView addGestureRecognizer:tapGesture];
-        [self.contentView addSubview:_sectionTitleView];
-        
-        _titleLabel = [[UILabel alloc] initWithFrame:CGRectZero];
-        _titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
-        _titleLabel.numberOfLines = 0;
-        _titleLabel.font = [UIFont systemFontOfSize:14];
-        [_sectionTitleView addSubview:_titleLabel];
-        
-        _indicatorImgView = [[UIImageView alloc] init];
-        _indicatorImgView.size = CGSizeMake(15, 25);
-        _indicatorImgView.image = [UIImage imageNamed:@"report_right"];
-        [_sectionTitleView addSubview:_indicatorImgView];
-        
-        _lineImageView = [[UIImageView alloc] init];
-        _lineImageView.backgroundColor = [UIColor colorWithRed:233/250.0 green:233/250.0 blue:233/250.0 alpha:1.0];
-        _lineImageView.hidden = NO;
-        [_sectionTitleView addSubview:_lineImageView];
-        
-       
-        self.contentView.backgroundColor = [UIColor clearColor];
+        [self.contentView addSubview:self.sectionTitleView];
     }
     return self;
 }
@@ -85,5 +64,51 @@
     }
 }
 
+#pragma mark getters
+- (UIView *)sectionTitleView {
+    if (_sectionTitleView) {
+        return _sectionTitleView;
+    }
+    _sectionTitleView = [[UIView alloc] initWithFrame:CGRectZero];
+    _sectionTitleView.userInteractionEnabled = YES;
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(sectionDidTaped:)];
+    [_sectionTitleView addGestureRecognizer:tapGesture];
+    return _sectionTitleView;
+}
+
+- (UILabel *)titleLabel {
+    if (_titleLabel) {
+        return _titleLabel;
+    }
+    
+    _titleLabel = [[UILabel alloc] initWithFrame:CGRectZero];
+    _titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
+    _titleLabel.numberOfLines = 0;
+    _titleLabel.font = [UIFont systemFontOfSize:14];
+    [self.sectionTitleView addSubview:_titleLabel];
+    return _titleLabel;
+}
+
+- (UIImageView *)indicatorImgView {
+    if (_indicatorImgView) {
+        return _indicatorImgView;
+    }
+    _indicatorImgView = [[UIImageView alloc] init];
+    _indicatorImgView.size = CGSizeMake(15, 25);
+    _indicatorImgView.image = self.indicatorImage;
+    [self.sectionTitleView addSubview:_indicatorImgView];
+    return _indicatorImgView;
+}
+
+- (UIImageView *)lineImageView {
+    if (_lineImageView) {
+        return _lineImageView;
+    }
+    _lineImageView = [[UIImageView alloc] init];
+    _lineImageView.backgroundColor = [UIColor colorWithRed:233/250.0 green:233/250.0 blue:233/250.0 alpha:1.0];
+    _lineImageView.hidden = NO;
+    [self.sectionTitleView addSubview:_lineImageView];
+    return _lineImageView;
+}
 
 @end

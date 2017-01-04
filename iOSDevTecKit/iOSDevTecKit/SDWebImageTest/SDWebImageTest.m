@@ -9,7 +9,7 @@
 #import "SDWebImageTest.h"
 //#import "SDWebImageManager.h"
 #import "UIImageView+WebCache.h"
-
+#import "UIFactory.h"
 @interface SDWebImageTest ()
 {
     int imageIdx;
@@ -39,6 +39,13 @@
     
    [NSTimer scheduledTimerWithTimeInterval:2.0 target:self selector:@selector(changeImage) userInfo:nil repeats:YES];
     imageIdx = 1;
+    
+    
+    
+        UITextField *textfield = [UIFactory createTextFieldWith:CGRectMake(0, 0, 100, 100) borderStyle:UITextBorderStyleRoundedRect textColor:[UIColor orangeColor] placeholder:@"输入文字"];
+        textfield.center = self.view.center;
+        [self.view addSubview: textfield];
+        [self.view bringSubviewToFront:textfield];
     
 }
 
