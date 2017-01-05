@@ -9,9 +9,12 @@
 #import "AnnotateImage.h"
 #import "UIImageExt.h"
 #import "UIFactory.h"
-#import "AnnoteTextView.h"
+#import "AnnoteView.h"
 #import <Photos/Photos.h>
 #import "MBProgressHUD.h"
+#import "PopoverAction.h"
+#import "PopoverView.h"
+#import "DownLoadFont.h"
 
 @interface AnnotateImage ()<UINavigationControllerDelegate, UIImagePickerControllerDelegate, UIActionSheetDelegate>
 @property (strong, nonatomic) IBOutlet UIImageView *imageView;
@@ -20,9 +23,13 @@
 @property (strong, nonatomic) NSMutableArray *textFieldArr;
 @property (nonatomic) BOOL expand;
 @property (nonatomic) BOOL move;
+@property (nonatomic) BOOL deleteAnnote;
+@property (nonatomic) BOOL setFont;
 @property (nonatomic) CGPoint touchBegin;
 @property (nonatomic) CGRect annoteInitFrame;
-@property (nonatomic, strong) AnnoteTextView *annoteView;
+@property (nonatomic, strong) AnnoteView *annoteView;
+@property (nonatomic) BOOL selectEditImage;
+@property (nonatomic, strong) DownLoadFont *downLoadFont;
 @end
 
 @implementation AnnotateImage
@@ -35,62 +42,45 @@
     
 }
 
-- (IBAction)saveDisposedImage:(id)sender {
-    [self saveImage:screenshot(self.containerView)];
+- (DownLoadFont *)downLoadFont {
+    if (_downLoadFont) {
+        return _downLoadFont;
+    }
+    _downLoadFont = [[DownLoadFont alloc] init];
+    return _downLoadFont;
 }
 
-UIImage * screenshot(UIView *view){
-//    if(UIGraphicsBeginImageContextWithOptions != NULL)
-//    {
-        UIGraphicsBeginImageContextWithOptions(view.frame.size, NO, 0.0);
-//    } else {
-//        UIGraphicsBeginImageContext(view.frame.size);
-//    }
+- (IBAction)saveDisposedImage:(id)sender {
+    //保存图像前隐藏操作icon
+    [self.textFieldArr enumerateObjectsUsingBlock:^(AnnoteView *annoteView, NSUInteger idx, BOOL * _Nonnull stop) {
+        [annoteView setCornerViewVisibleState:YES];
+    }];
+    [self saveImage: [self screenshot:self.containerView ]];
+    
+}
+
+- (UIImage *) screenshot:(UIView *)view{
+
+    UIGraphicsBeginImageContextWithOptions(view.frame.size, NO, 0.0);
+
     [view.layer renderInContext:UIGraphicsGetCurrentContext()];
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     return image;
 }
-//- (UIImage * )screenshot{
-//    UIView * view = [[UIScreen mainScreen] snapshotViewAfterScreenUpdates:YES];
-//    UIGraphicsBeginImageContextWithOptions(view.frame.size, NO, 0.0);
-//    [view.layer renderInContext:UIGraphicsGetCurrentContext()];
-//    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
-//    UIGraphicsEndImageContext();
-//    return image;
-//}
 
 - (IBAction)selectImageFromLibrary:(id)sender {
-    //构建一个选择菜单列表 选择照相机还是 相册
-    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0) {
-        
-        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"选择照片方式" message:nil
-                                                                          preferredStyle:UIAlertControllerStyleAlert];
-        
-        UIAlertAction *alertActionOne = [UIAlertAction actionWithTitle:@"相册" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-            [self openPhotoLibrary];
-        }];
-        [alertController addAction:alertActionOne];
-        
-        UIAlertAction *alertActionTwo = [UIAlertAction actionWithTitle:@"拍照" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-            [self openCamera];
-        }];
-        [alertController addAction:alertActionTwo];
-        
-        UIAlertAction *cancelAlertAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
-        [alertController addAction:cancelAlertAction];
-        
-        [self presentViewController:alertController animated:YES completion:nil];
-    } else {
-        
-        UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"相册",@"拍照", nil];
-        sheet.delegate = self;
-        [sheet showInView:self.view];
-    }
+    self.selectEditImage = YES;
+    [self showSelectAlert];
+}
+
+- (IBAction)addImage:(id)sender {
+    self.selectEditImage = NO;
+    [self showSelectAlert];
 }
 
 - (IBAction)addAnAnnotation:(id)sender {
-    AnnoteTextView *tf = [[AnnoteTextView alloc] initWithFrame:CGRectMake(0, 0, 200, 200)];
+    AnnoteView *tf = [[AnnoteView alloc] initWithFrame:CGRectMake(0, 0, 200, 200) annoteViewType:AnnoteViewTypeText];
     tf.center = self.view.center;
 //    tf.backgroundColor = [UIColor clearColor];
     [self.containerView addSubview:tf];
@@ -99,35 +89,113 @@ UIImage * screenshot(UIView *view){
     [self.textFieldArr addObject:tf];
 }
 
+- (void)addAnnotationImage:(UIImage *)image {
+    AnnoteView *tf = [[AnnoteView alloc] initWithFrame:CGRectMake(0, 0, 200, 200) annoteViewType:AnnoteViewTypeImage];
+    tf.center = self.view.center;
+    //    tf.backgroundColor = [UIColor clearColor];
+    [self.containerView addSubview:tf];
+    tf.imageView.image = image;
+//    [tf.textView becomeFirstResponder];
+    [self.textFieldArr addObject:tf];
+}
+
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     UITouch *touch = [touches anyObject];
     if (self.textFieldArr.count > 0 ) {
         
         typeof(self) __weak wself = self;
-        [self.textFieldArr enumerateObjectsUsingBlock:^(AnnoteTextView *anoteView, NSUInteger idx, BOOL * _Nonnull stop) {
+        __block AnnoteView *selectedAnnoteView;
+        [self.textFieldArr enumerateObjectsUsingBlock:^(AnnoteView *anoteView, NSUInteger idx, BOOL * _Nonnull stop) {
             wself.touchBegin = [touch locationInView:anoteView];
             NSLog(@"beginPoint(%f, %f)", wself.touchBegin.x, wself.touchBegin.y);
             wself.annoteInitFrame = anoteView.frame;
             wself.annoteView = anoteView;
-            if ( CGRectContainsPoint(anoteView.leftTopView.frame, wself.touchBegin)) {
+            //点击右上角的位置放大视图
+            if ( CGRectContainsPoint(anoteView.rightTopView.frame, wself.touchBegin)) {
                 NSLog(@"放大输入框");
                 wself.expand = YES;
             }else {
                 wself.expand = NO;
             }
             
-            if (CGRectContainsPoint(anoteView.rightTopView.frame, self.touchBegin)){
+            //点击左上角的位置移动视图
+            if (CGRectContainsPoint(anoteView.leftTopView.frame, self.touchBegin)){
                 wself.move =YES;
             }else {
                 wself.move = NO;
             }
             
-            if (wself.expand || wself.move) {
+            //点击左上角的位置移动视图
+            if (CGRectContainsPoint(anoteView.rightBottomView.frame, self.touchBegin)){
+                wself.deleteAnnote =YES;
+                selectedAnnoteView = anoteView;
+            }else {
+                wself.deleteAnnote = NO;
+            }
+            
+            //点击左下角的位置setFont
+            if (CGRectContainsPoint(anoteView.leftBottomView.frame, self.touchBegin)){
+                wself.setFont = YES;
+                selectedAnnoteView = anoteView;
+            }else {
+                wself.setFont = NO;
+            }
+            
+            if (wself.expand || wself.move || wself.deleteAnnote || wself.setFont) {
                 *stop = YES;
             }
         }];
         
+        if (self.deleteAnnote) {
+            [self.textFieldArr removeObject:selectedAnnoteView];
+            [selectedAnnoteView removeFromSuperview];
+        }
+        
+        if (self.setFont) {
+            [self changeAnnoteTextFont:selectedAnnoteView];
+        }
+        
     }
+}
+
+- (void)changeAnnoteTextFont:(AnnoteView *)noteView {
+    typeof(self) __weak wself = self;
+    NSMutableArray *popOverActions = [[NSMutableArray alloc] init];
+    for (NSString* fontName in self.downLoadFont.fontNames) {
+        PopoverAction *action = [PopoverAction actionWithTitle:fontName handler:^(PopoverAction *action) {
+            NSLog(@"fontName = %@", fontName);
+            [wself.downLoadFont asynchronouslySetFontName:fontName with:^{
+                noteView.textView.font = [UIFont fontWithName:fontName size:20.0];
+            }];
+        }];
+        [popOverActions addObject:action];
+    }
+    
+//    PopoverAction *action1 = [PopoverAction actionWithTitle:@"加好友" handler:^(PopoverAction *action) {
+////        _noticeLabel.text = action.title;
+//    }];
+//    PopoverAction *action2 = [PopoverAction actionWithTitle:@"扫一扫" handler:^(PopoverAction *action) {
+////        _noticeLabel.text = action.title;
+//    }];
+//    PopoverAction *action3 = [PopoverAction actionWithTitle:@"发起聊天" handler:^(PopoverAction *action) {
+////        _noticeLabel.text = action.title;
+//    }];
+//    PopoverAction *action4 = [PopoverAction actionWithTitle:@"发起群聊" handler:^(PopoverAction *action) {
+////        _noticeLabel.text = action.title;
+//    }];
+//    PopoverAction *action5 = [PopoverAction actionWithTitle:@"查找群聊" handler:^(PopoverAction *action) {
+////        _noticeLabel.text = action.title;
+//    }];
+//    PopoverAction *action6 = [PopoverAction actionWithTitle:@"我的群聊" handler:^(PopoverAction *action) {
+////        _noticeLabel.text = action.title;
+//    }];
+    
+    
+    
+    PopoverView *popoverView = [PopoverView popoverView];
+    popoverView.style = PopoverViewStyleDark;
+    popoverView.hideAfterTouchOutside = NO; // 点击外部时不允许隐藏
+    [popoverView showToView:noteView.leftBottomView withActions:popOverActions];
 }
 
 -(void)touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
@@ -163,17 +231,47 @@ UIImage * screenshot(UIView *view){
         self.annoteView.frame = newframe;
         self.annoteInitFrame = newframe;
     }
-    
-    
-    
 }
 
 -(void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    self.expand = false;
-    self.move = false;
+    self.expand = NO;
+    self.move = NO;
+    self.deleteAnnote = NO;
+    
 }
 
 -(void)touchesCancelled:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+
+}
+
+
+-(void)showSelectAlert {
+    //构建一个选择菜单列表 选择照相机还是 相册
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0) {
+        
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"选择照片方式" message:nil
+                                                                          preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction *alertActionOne = [UIAlertAction actionWithTitle:@"相册" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+            [self openPhotoLibrary];
+        }];
+        [alertController addAction:alertActionOne];
+        
+        UIAlertAction *alertActionTwo = [UIAlertAction actionWithTitle:@"拍照" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+            [self openCamera];
+        }];
+        [alertController addAction:alertActionTwo];
+        
+        UIAlertAction *cancelAlertAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+        [alertController addAction:cancelAlertAction];
+        
+        [self presentViewController:alertController animated:YES completion:nil];
+    } else {
+        
+        UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"相册",@"拍照", nil];
+        sheet.delegate = self;
+        [sheet showInView:self.view];
+    }
 
 }
 
@@ -186,7 +284,6 @@ UIImage * screenshot(UIView *view){
         // 打开拍照
         [self openCamera];
     }
-    
 }
 
 //打开相册
@@ -225,16 +322,20 @@ UIImage * screenshot(UIView *view){
     if (picker.sourceType == UIImagePickerControllerSourceTypePhotoLibrary) { //如果打开相册
         image = [info objectForKey:UIImagePickerControllerOriginalImage];
         //压缩图片
-        image = [image imageByScalingAndCroppingForSize:CGSizeMake(320, 320)];
+//        image = [image imageByScalingAndCroppingForSize:CGSizeMake(320, 320)];
     }
     else {//如果打开的是照相机
         [picker dismissViewControllerAnimated:YES completion:nil];
         //image = [info objectForKey:UIImagePickerControllerEditedImage]; //得到编辑后的照片
         image = [info objectForKey:UIImagePickerControllerOriginalImage]; //获取原始的照片
         //压缩图片
-        image = [image imageByScalingAndCroppingForSize:CGSizeMake(320, 320)];
+//        image = [image imageByScalingAndCroppingForSize:CGSizeMake(320, 320)];
     }
-    
+    if (self.selectEditImage) {
+        self.imageView.image = image;
+    }else {
+        [self addAnnotationImage:image];
+    }
     
     //处理图片 压缩、裁剪或上传
 }
@@ -272,20 +373,11 @@ UIImage * screenshot(UIView *view){
 
 - (void)saveImage:(UIImage *)image
 {
-//    NSMutableArray *imageIds = [NSMutableArray array];
     typeof (self) __weak wself = self;
     [[PHPhotoLibrary sharedPhotoLibrary] performChanges:^{
-        
         //写入图片到相册
-        PHAssetChangeRequest *req = [PHAssetChangeRequest creationRequestForAssetFromImage:image];
-        //记录本地标识，等待完成后取到相册中的图片对象
-//        [imageIds addObject:req.placeholderForCreatedAsset.localIdentifier];
-        
-        
+        [PHAssetChangeRequest creationRequestForAssetFromImage:image];
     } completionHandler:^(BOOL success, NSError * _Nullable error) {
-        
-        NSLog(@"success = %d, error = %@", success, error);
-        
         if (success)
         {
             dispatch_async(dispatch_get_main_queue(), ^{
@@ -293,31 +385,13 @@ UIImage * screenshot(UIView *view){
                 hud.mode = MBProgressHUDModeText;
                 hud.labelText = @"保存成功";
                 hud.removeFromSuperViewOnHide = YES;
-                //            hud.completionBlock = block;
                 [hud hide:YES afterDelay:1];
+                
+                //保存图像后显示操作icon
+                [wself.textFieldArr enumerateObjectsUsingBlock:^(AnnoteView *annoteView, NSUInteger idx, BOOL * _Nonnull stop) {
+                    [annoteView setCornerViewVisibleState:NO];
+                }];
             });
-
-            //成功后取相册中的图片对象
-//            __block PHAsset *imageAsset = nil;
-//            PHFetchResult *result = [PHAsset fetchAssetsWithLocalIdentifiers:imageIds options:nil];
-//            [result enumerateObjectsUsingBlock:^(PHAsset * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-//                
-//                imageAsset = obj;
-//                *stop = YES;
-//                
-//            }];
-            
-//            if (imageAsset)
-//            {
-//                //加载图片数据
-//                [[PHImageManager defaultManager] requestImageDataForAsset:imageAsset
-//                                                                  options:nil
-//                                                            resultHandler:^(NSData * _Nullable imageData, NSString * _Nullable dataUTI, UIImageOrientation orientation, NSDictionary * _Nullable info) {
-//                                                                
-//                                                                NSLog("imageData = %@", imageData);
-//                                                                
-//                                                            }];
-//            }
         }
         
     }];

@@ -133,8 +133,13 @@
 		CBBFD2CF1E079047002A88A6 /* Teacher+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = CBBFD2C91E079047002A88A6 /* Teacher+CoreDataProperties.m */; };
 		CBBFD2D01E079047002A88A6 /* Course.m in Sources */ = {isa = PBXBuildFile; fileRef = CBBFD2CB1E079047002A88A6 /* Course.m */; };
 		CBBFD2D11E079047002A88A6 /* Course+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = CBBFD2CD1E079047002A88A6 /* Course+CoreDataProperties.m */; };
-		CBFB25CC1E1C8F300096E1E4 /* AnnoteTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = CBFB25CB1E1C8F300096E1E4 /* AnnoteTextView.m */; };
+		CBFB25CC1E1C8F300096E1E4 /* AnnoteView.m in Sources */ = {isa = PBXBuildFile; fileRef = CBFB25CB1E1C8F300096E1E4 /* AnnoteView.m */; };
 		CBFB25CE1E1CDFF70096E1E4 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBFB25CD1E1CDFF60096E1E4 /* Photos.framework */; };
+		CBFB25D11E1E2A340096E1E4 /* DownLoadFont.m in Sources */ = {isa = PBXBuildFile; fileRef = CBFB25D01E1E2A340096E1E4 /* DownLoadFont.m */; };
+		CBFB25D31E1E2CF60096E1E4 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBFB25D21E1E2CF60096E1E4 /* CoreText.framework */; };
+		CBFB25DB1E1E3E430096E1E4 /* PopoverAction.m in Sources */ = {isa = PBXBuildFile; fileRef = CBFB25D61E1E3E430096E1E4 /* PopoverAction.m */; };
+		CBFB25DC1E1E3E430096E1E4 /* PopoverView.m in Sources */ = {isa = PBXBuildFile; fileRef = CBFB25D81E1E3E430096E1E4 /* PopoverView.m */; };
+		CBFB25DD1E1E3E430096E1E4 /* PopoverViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CBFB25DA1E1E3E430096E1E4 /* PopoverViewCell.m */; };
 		F508B8C51CAD27CC008A889B /* AMap.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F508B8C41CAD27CC008A889B /* AMap.bundle */; };
 		F508B8CA1CAE1B6A008A889B /* WGS84TOGCJ02.m in Sources */ = {isa = PBXBuildFile; fileRef = F508B8C91CAE1B6A008A889B /* WGS84TOGCJ02.m */; };
 		F51D04071C1C009B00519911 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F51D04061C1C009B00519911 /* QuartzCore.framework */; };
@@ -399,9 +404,18 @@
 		CBBFD2CB1E079047002A88A6 /* Course.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Course.m; sourceTree = "<group>"; };
 		CBBFD2CC1E079047002A88A6 /* Course+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Course+CoreDataProperties.h"; sourceTree = "<group>"; };
 		CBBFD2CD1E079047002A88A6 /* Course+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Course+CoreDataProperties.m"; sourceTree = "<group>"; };
-		CBFB25CA1E1C8F300096E1E4 /* AnnoteTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnnoteTextView.h; sourceTree = "<group>"; };
-		CBFB25CB1E1C8F300096E1E4 /* AnnoteTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnnoteTextView.m; sourceTree = "<group>"; };
+		CBFB25CA1E1C8F300096E1E4 /* AnnoteView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnnoteView.h; sourceTree = "<group>"; };
+		CBFB25CB1E1C8F300096E1E4 /* AnnoteView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnnoteView.m; sourceTree = "<group>"; };
 		CBFB25CD1E1CDFF60096E1E4 /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
+		CBFB25CF1E1E2A330096E1E4 /* DownLoadFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownLoadFont.h; sourceTree = "<group>"; };
+		CBFB25D01E1E2A340096E1E4 /* DownLoadFont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownLoadFont.m; sourceTree = "<group>"; };
+		CBFB25D21E1E2CF60096E1E4 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		CBFB25D51E1E3E430096E1E4 /* PopoverAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopoverAction.h; sourceTree = "<group>"; };
+		CBFB25D61E1E3E430096E1E4 /* PopoverAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopoverAction.m; sourceTree = "<group>"; };
+		CBFB25D71E1E3E430096E1E4 /* PopoverView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopoverView.h; sourceTree = "<group>"; };
+		CBFB25D81E1E3E430096E1E4 /* PopoverView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopoverView.m; sourceTree = "<group>"; };
+		CBFB25D91E1E3E430096E1E4 /* PopoverViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopoverViewCell.h; sourceTree = "<group>"; };
+		CBFB25DA1E1E3E430096E1E4 /* PopoverViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopoverViewCell.m; sourceTree = "<group>"; };
 		EFEF6C4A561CDAA02CA064ED /* libPods-iOSDevTecKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iOSDevTecKit.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F108932021382A71ABC7C58C /* Pods-iOSDevTecKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSDevTecKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOSDevTecKit/Pods-iOSDevTecKit.release.xcconfig"; sourceTree = "<group>"; };
 		F508B8C41CAD27CC008A889B /* AMap.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AMap.bundle; sourceTree = "<group>"; };
@@ -479,6 +493,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CBFB25D31E1E2CF60096E1E4 /* CoreText.framework in Frameworks */,
 				CBFB25CE1E1CDFF70096E1E4 /* Photos.framework in Frameworks */,
 				CB2CB9BF1E1B8ADA003FC0A1 /* libPods-iOSDevTecKit.a in Frameworks */,
 				CBBFD2921E028AE0002A88A6 /* CoreData.framework in Frameworks */,
@@ -512,6 +527,7 @@
 		610847DA4FB23C005825A174 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CBFB25D21E1E2CF60096E1E4 /* CoreText.framework */,
 				CBFB25CD1E1CDFF60096E1E4 /* Photos.framework */,
 				CBBFD2911E028AE0002A88A6 /* CoreData.framework */,
 				CB138D311D8F779000AF84B1 /* AudioToolbox.framework */,
@@ -812,6 +828,19 @@
 			name = manyToMany;
 			sourceTree = "<group>";
 		};
+		CBFB25D41E1E3E430096E1E4 /* PopoverView */ = {
+			isa = PBXGroup;
+			children = (
+				CBFB25D51E1E3E430096E1E4 /* PopoverAction.h */,
+				CBFB25D61E1E3E430096E1E4 /* PopoverAction.m */,
+				CBFB25D71E1E3E430096E1E4 /* PopoverView.h */,
+				CBFB25D81E1E3E430096E1E4 /* PopoverView.m */,
+				CBFB25D91E1E3E430096E1E4 /* PopoverViewCell.h */,
+				CBFB25DA1E1E3E430096E1E4 /* PopoverViewCell.m */,
+			);
+			path = PopoverView;
+			sourceTree = "<group>";
+		};
 		F508B8C61CAE0B5C008A889B /* gaode */ = {
 			isa = PBXGroup;
 			children = (
@@ -865,6 +894,7 @@
 		F52C38121BE7B98400C57DE8 /* iOSDevTecKit */ = {
 			isa = PBXGroup;
 			children = (
+				CBFB25D41E1E3E430096E1E4 /* PopoverView */,
 				CBBFD2461E0281EB002A88A6 /* TestCoreData */,
 				CB4FCF561D6AE34A005CAF6D /* DataBaseManager */,
 				CB4D7FC01D13DD730005322B /* Utility */,
@@ -950,8 +980,10 @@
 				CB0BD2CB1E16410700A4FD67 /* AnnotateImage.h */,
 				CB0BD2CC1E16410700A4FD67 /* AnnotateImage.m */,
 				CB0BD2CD1E16410700A4FD67 /* AnnotateImage.xib */,
-				CBFB25CA1E1C8F300096E1E4 /* AnnoteTextView.h */,
-				CBFB25CB1E1C8F300096E1E4 /* AnnoteTextView.m */,
+				CBFB25CA1E1C8F300096E1E4 /* AnnoteView.h */,
+				CBFB25CB1E1C8F300096E1E4 /* AnnoteView.m */,
+				CBFB25CF1E1E2A330096E1E4 /* DownLoadFont.h */,
+				CBFB25D01E1E2A340096E1E4 /* DownLoadFont.m */,
 			);
 			path = SDWebImageTest;
 			sourceTree = "<group>";
@@ -1267,6 +1299,7 @@
 				CB4FCF621D6AE56C005CAF6D /* NSDate+TimeString.m in Sources */,
 				CBBFD24A1E02821B002A88A6 /* TestCoreDataVC.m in Sources */,
 				CB4FCF711D6AEC7C005CAF6D /* ScrollMessageView.m in Sources */,
+				CBFB25DC1E1E3E430096E1E4 /* PopoverView.m in Sources */,
 				CB4FCF5F1D6AE4A8005CAF6D /* WJHUD.m in Sources */,
 				CB26A47B1D3DE21200DFA719 /* LayerContentsImageView.m in Sources */,
 				CB4D7FCC1D13DD7D0005322B /* Validator.m in Sources */,
@@ -1281,9 +1314,10 @@
 				CB1865341D499C0F00B4CD44 /* CATransactionTestVC.m in Sources */,
 				CB26A47E1D3DE27E00DFA719 /* LayerDrawWithLIBCG.m in Sources */,
 				F5451AFC1CDCE95700B862E0 /* ProvinceVC2.m in Sources */,
+				CBFB25D11E1E2A340096E1E4 /* DownLoadFont.m in Sources */,
 				CB18652D1D48834800B4CD44 /* TextLayerLabel.m in Sources */,
 				CB44A18A1E1241A5001C072E /* FoldScrollViewItemAnimation.m in Sources */,
-				CBFB25CC1E1C8F300096E1E4 /* AnnoteTextView.m in Sources */,
+				CBFB25CC1E1C8F300096E1E4 /* AnnoteView.m in Sources */,
 				86AFEC061C4F1EB40082BA25 /* SearchControllerTest.m in Sources */,
 				CBB020BD1D4B38D80041A7D5 /* CAKeyFrameAnimationVC.m in Sources */,
 				CB4FCF981D6E77AC005CAF6D /* ShimmerLabel.m in Sources */,
@@ -1292,6 +1326,7 @@
 				F52C38181BE7B98400C57DE8 /* AppDelegate.m in Sources */,
 				86AFEBE91C4C7D0E0082BA25 /* PullDownMenu2.m in Sources */,
 				F52C38151BE7B98400C57DE8 /* main.m in Sources */,
+				CBFB25DB1E1E3E430096E1E4 /* PopoverAction.m in Sources */,
 				86AFEC231C4F215D0082BA25 /* CalloutAnnotationView.m in Sources */,
 				CB4D7FB91D13D8A70005322B /* TapGestureLabel.m in Sources */,
 				CB4FCF7C1D6AED01005CAF6D /* GesturePasswordButton.m in Sources */,
@@ -1330,6 +1365,7 @@
 				CB4FCF591D6AE34A005CAF6D /* DBManager.m in Sources */,
 				86AFEBF21C4C7D9B0082BA25 /* PullDownMenu.m in Sources */,
 				CB4FCF521D6AE25D005CAF6D /* WJTextView.m in Sources */,
+				CBFB25DD1E1E3E430096E1E4 /* PopoverViewCell.m in Sources */,
 				CB4FCF4C1D6AE12D005CAF6D /* GTMBase64.m in Sources */,
 				F5451AFA1CDCE95700B862E0 /* BlockTestVC.m in Sources */,
 				CB26A4691D3DB9D900DFA719 /* TransformTestVC.m in Sources */,
