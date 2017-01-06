@@ -24,4 +24,5 @@ typedef NS_ENUM(NSInteger, AnnoteViewType) {
 @property(nonatomic) AnnoteViewType viewType;
 - (instancetype)initWithFrame:(CGRect)frame annoteViewType:(AnnoteViewType)type;
 - (void)setCornerViewVisibleState:(BOOL)state;
+- (void)imageViewRotate;
 @end

@@ -7,6 +7,9 @@
 //
 
 #import "AnnoteView.h"
+@interface AnnoteView()
+@property(nonatomic) NSInteger touchCount;
+@end
 
 @implementation AnnoteView
 
@@ -15,6 +18,7 @@
     self = [super initWithFrame:frame];
     if (self) {
         self.viewType = type;
+        self.touchCount = 0;
         if (self.viewType == AnnoteViewTypeText) {
             [self addSubview:self.textView];
         }else if(self.viewType == AnnoteViewTypeImage){
@@ -98,7 +102,12 @@
     }
     _leftBottomView = [[UIView alloc] init];
 //    _leftBottomView.backgroundColor = [UIColor greenColor];
-    _leftBottomView.layer.contents = (__bridge id _Nullable)([UIImage imageNamed:@"font"].CGImage);
+    if (self.viewType == AnnoteViewTypeText){
+        _leftBottomView.layer.contents = (__bridge id _Nullable)([UIImage imageNamed:@"font"].CGImage);
+    }else if(self.viewType == AnnoteViewTypeImage) {
+        _leftBottomView.layer.contents = (__bridge id _Nullable)([UIImage imageNamed:@"rotateleft"].CGImage);
+    }
+    
     return _leftBottomView;
 }
 
@@ -116,6 +125,14 @@
     self.rightTopView.hidden = state;
     self.leftBottomView.hidden = state;
     self.rightBottomView.hidden = state;
+}
+
+- (void)imageViewRotate {
+    self.touchCount++;
+    float angle = (self.touchCount % 4) * M_PI_2;
+    [UIView animateWithDuration:0.2 animations:^{
+        self.imageView.transform = CGAffineTransformMakeRotation(-angle);
+    }];
 }
 
 @end
