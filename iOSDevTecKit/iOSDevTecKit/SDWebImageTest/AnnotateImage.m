@@ -24,7 +24,7 @@
 @property (nonatomic) BOOL expand;
 @property (nonatomic) BOOL move;
 @property (nonatomic) BOOL deleteAnnote;
-@property (nonatomic) BOOL setFont;
+@property (nonatomic) BOOL selectLeftBottom;
 @property (nonatomic) CGPoint touchBegin;
 @property (nonatomic) CGRect annoteInitFrame;
 @property (nonatomic, strong) AnnoteView *annoteView;
@@ -135,13 +135,13 @@
             
             //点击左下角的位置setFont
             if (CGRectContainsPoint(anoteView.leftBottomView.frame, self.touchBegin)){
-                wself.setFont = YES;
+                wself.selectLeftBottom = YES;
                 selectedAnnoteView = anoteView;
             }else {
-                wself.setFont = NO;
+                wself.selectLeftBottom = NO;
             }
             
-            if (wself.expand || wself.move || wself.deleteAnnote || wself.setFont) {
+            if (wself.expand || wself.move || wself.deleteAnnote || wself.selectLeftBottom) {
                 *stop = YES;
             }
         }];
@@ -151,8 +151,15 @@
             [selectedAnnoteView removeFromSuperview];
         }
         
-        if (self.setFont) {
-            [self changeAnnoteTextFont:selectedAnnoteView];
+        if (self.selectLeftBottom) {
+            if (selectedAnnoteView.viewType == AnnoteViewTypeText) {
+                //更换字体
+                [self changeAnnoteTextFont:selectedAnnoteView];
+            }else if(selectedAnnoteView.viewType == AnnoteViewTypeImage) {
+                //旋转图片
+                [selectedAnnoteView imageViewRotate];
+            }
+            
         }
         
     }
@@ -170,27 +177,6 @@
         }];
         [popOverActions addObject:action];
     }
-    
-//    PopoverAction *action1 = [PopoverAction actionWithTitle:@"加好友" handler:^(PopoverAction *action) {
-////        _noticeLabel.text = action.title;
-//    }];
-//    PopoverAction *action2 = [PopoverAction actionWithTitle:@"扫一扫" handler:^(PopoverAction *action) {
-////        _noticeLabel.text = action.title;
-//    }];
-//    PopoverAction *action3 = [PopoverAction actionWithTitle:@"发起聊天" handler:^(PopoverAction *action) {
-////        _noticeLabel.text = action.title;
-//    }];
-//    PopoverAction *action4 = [PopoverAction actionWithTitle:@"发起群聊" handler:^(PopoverAction *action) {
-////        _noticeLabel.text = action.title;
-//    }];
-//    PopoverAction *action5 = [PopoverAction actionWithTitle:@"查找群聊" handler:^(PopoverAction *action) {
-////        _noticeLabel.text = action.title;
-//    }];
-//    PopoverAction *action6 = [PopoverAction actionWithTitle:@"我的群聊" handler:^(PopoverAction *action) {
-////        _noticeLabel.text = action.title;
-//    }];
-    
-    
     
     PopoverView *popoverView = [PopoverView popoverView];
     popoverView.style = PopoverViewStyleDark;
