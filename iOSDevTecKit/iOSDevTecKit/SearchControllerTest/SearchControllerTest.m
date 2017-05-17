@@ -40,8 +40,8 @@
     self.searchController.searchBar.placeholder = @"搜索信息";
     self.searchController.searchBar.showsScopeBar = NO;
     [self.dataTableView reloadData];
-    
     [self configSearchBar:self.searchController.searchBar];
+    [self.searchController.searchBar becomeFirstResponder];
 }
 
 - (void)configSearchBar:(UISearchBar *)searchBar {
