@@ -149,6 +149,9 @@
 		CBFB25DD1E1E3E430096E1E4 /* PopoverViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CBFB25DA1E1E3E430096E1E4 /* PopoverViewCell.m */; };
 		F508B8C51CAD27CC008A889B /* AMap.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F508B8C41CAD27CC008A889B /* AMap.bundle */; };
 		F508B8CA1CAE1B6A008A889B /* WGS84TOGCJ02.m in Sources */ = {isa = PBXBuildFile; fileRef = F508B8C91CAE1B6A008A889B /* WGS84TOGCJ02.m */; };
+		F5171C641EC2FD4C00C7DBE0 /* TouchIDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5171C621EC2FD4C00C7DBE0 /* TouchIDViewController.m */; };
+		F5171C651EC2FD4C00C7DBE0 /* TouchIDViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5171C631EC2FD4C00C7DBE0 /* TouchIDViewController.xib */; };
+		F5171C711ECC455B00C7DBE0 /* LZRelayoutButton.m in Sources */ = {isa = PBXBuildFile; fileRef = F5171C701ECC455B00C7DBE0 /* LZRelayoutButton.m */; };
 		F51D04071C1C009B00519911 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F51D04061C1C009B00519911 /* QuartzCore.framework */; };
 		F51D04091C1C00AA00519911 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F51D04081C1C00AA00519911 /* Foundation.framework */; };
 		F51D040B1C1C00B400519911 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F51D040A1C1C00B400519911 /* UIKit.framework */; };
@@ -187,6 +190,8 @@
 		F55476B41C182982000E196E /* libstdc++.6.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F55476B31C182982000E196E /* libstdc++.6.tbd */; };
 		F56F243C1C09E4C9009E3E4F /* CALayer+XibConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = F56F24391C09E4C9009E3E4F /* CALayer+XibConfiguration.m */; };
 		F56F243D1C09E4C9009E3E4F /* UIView+CornerRaidus.m in Sources */ = {isa = PBXBuildFile; fileRef = F56F243B1C09E4C9009E3E4F /* UIView+CornerRaidus.m */; };
+		F57AC7081E2B869700FA4020 /* AdaptiveUITest1.m in Sources */ = {isa = PBXBuildFile; fileRef = F57AC7061E2B869700FA4020 /* AdaptiveUITest1.m */; };
+		F57AC7091E2B869700FA4020 /* AdaptiveUITest1.xib in Resources */ = {isa = PBXBuildFile; fileRef = F57AC7071E2B869700FA4020 /* AdaptiveUITest1.xib */; };
 		F5A06E941C918E1B0026BD51 /* PickerViewTestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F5A06E931C918E1B0026BD51 /* PickerViewTestVC.m */; };
 		F5A06E951C9190130026BD51 /* MAMapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86AFEC311C4F223F0082BA25 /* MAMapKit.framework */; };
 		F5ED57E21C2ADD1E002C8509 /* SelfDefineView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5ED57E11C2ADD1E002C8509 /* SelfDefineView.xib */; };
@@ -441,6 +446,11 @@
 		F508B8C41CAD27CC008A889B /* AMap.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AMap.bundle; sourceTree = "<group>"; };
 		F508B8C81CAE1B6A008A889B /* WGS84TOGCJ02.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WGS84TOGCJ02.h; sourceTree = "<group>"; };
 		F508B8C91CAE1B6A008A889B /* WGS84TOGCJ02.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WGS84TOGCJ02.m; sourceTree = "<group>"; };
+		F5171C611EC2FD4C00C7DBE0 /* TouchIDViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchIDViewController.h; sourceTree = "<group>"; };
+		F5171C621EC2FD4C00C7DBE0 /* TouchIDViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TouchIDViewController.m; sourceTree = "<group>"; };
+		F5171C631EC2FD4C00C7DBE0 /* TouchIDViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TouchIDViewController.xib; sourceTree = "<group>"; };
+		F5171C6F1ECC455B00C7DBE0 /* LZRelayoutButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZRelayoutButton.h; sourceTree = "<group>"; };
+		F5171C701ECC455B00C7DBE0 /* LZRelayoutButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZRelayoutButton.m; sourceTree = "<group>"; };
 		F51D04061C1C009B00519911 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		F51D04081C1C00AA00519911 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F51D040A1C1C00B400519911 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -501,6 +511,9 @@
 		F56F24391C09E4C9009E3E4F /* CALayer+XibConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+XibConfiguration.m"; sourceTree = "<group>"; };
 		F56F243A1C09E4C9009E3E4F /* UIView+CornerRaidus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CornerRaidus.h"; sourceTree = "<group>"; };
 		F56F243B1C09E4C9009E3E4F /* UIView+CornerRaidus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CornerRaidus.m"; sourceTree = "<group>"; };
+		F57AC7051E2B869700FA4020 /* AdaptiveUITest1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdaptiveUITest1.h; sourceTree = "<group>"; };
+		F57AC7061E2B869700FA4020 /* AdaptiveUITest1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdaptiveUITest1.m; sourceTree = "<group>"; };
+		F57AC7071E2B869700FA4020 /* AdaptiveUITest1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AdaptiveUITest1.xib; sourceTree = "<group>"; };
 		F5A06E921C918E1B0026BD51 /* PickerViewTestVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PickerViewTestVC.h; sourceTree = "<group>"; };
 		F5A06E931C918E1B0026BD51 /* PickerViewTestVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PickerViewTestVC.m; sourceTree = "<group>"; };
 		F5AF47F91C09397700972AAB /* Macros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Macros.h; path = iOSDevTecKit/Macros.h; sourceTree = SOURCE_ROOT; };
@@ -926,6 +939,25 @@
 			name = "系统地图";
 			sourceTree = "<group>";
 		};
+		F5171C601EC2FD1D00C7DBE0 /* TouchIDUnlock */ = {
+			isa = PBXGroup;
+			children = (
+				F5171C611EC2FD4C00C7DBE0 /* TouchIDViewController.h */,
+				F5171C621EC2FD4C00C7DBE0 /* TouchIDViewController.m */,
+				F5171C631EC2FD4C00C7DBE0 /* TouchIDViewController.xib */,
+			);
+			path = TouchIDUnlock;
+			sourceTree = "<group>";
+		};
+		F5171C6E1ECC455B00C7DBE0 /* LZRelayoutButton */ = {
+			isa = PBXGroup;
+			children = (
+				F5171C6F1ECC455B00C7DBE0 /* LZRelayoutButton.h */,
+				F5171C701ECC455B00C7DBE0 /* LZRelayoutButton.m */,
+			);
+			path = LZRelayoutButton;
+			sourceTree = "<group>";
+		};
 		F52C38071BE7B98400C57DE8 = {
 			isa = PBXGroup;
 			children = (
@@ -950,6 +982,9 @@
 				CB8D02CC1F14678F00CC089E /* RunTime */,
 				CB8D02C81F145CF800CC089E /* CTest */,
 				CB3DCA7E1F0A4558002929E5 /* 正则表达式 */,
+				F5171C6E1ECC455B00C7DBE0 /* LZRelayoutButton */,
+				F5171C601EC2FD1D00C7DBE0 /* TouchIDUnlock */,
+				F57AC7041E2B860F00FA4020 /* AdaptiveUIDemo */,
 				CBFB25D41E1E3E430096E1E4 /* PopoverView */,
 				CBBFD2461E0281EB002A88A6 /* TestCoreData */,
 				CB4FCF561D6AE34A005CAF6D /* DataBaseManager */,
@@ -1142,6 +1177,16 @@
 			path = DelegateTest;
 			sourceTree = "<group>";
 		};
+		F57AC7041E2B860F00FA4020 /* AdaptiveUIDemo */ = {
+			isa = PBXGroup;
+			children = (
+				F57AC7051E2B869700FA4020 /* AdaptiveUITest1.h */,
+				F57AC7061E2B869700FA4020 /* AdaptiveUITest1.m */,
+				F57AC7071E2B869700FA4020 /* AdaptiveUITest1.xib */,
+			);
+			path = AdaptiveUIDemo;
+			sourceTree = "<group>";
+		};
 		F5A06E911C918DF80026BD51 /* PickerViewTest */ = {
 			isa = PBXGroup;
 			children = (
@@ -1222,6 +1267,7 @@
 								enabled = 1;
 							};
 						};
+						DevelopmentTeam = S9U2QFU9H4;
 					};
 				};
 			};
@@ -1269,6 +1315,7 @@
 				F5451B241CDCED3100B862E0 /* DelegateTestVC.xib in Resources */,
 				F52C381D1BE7B98400C57DE8 /* LaunchScreen.storyboard in Resources */,
 				86AFEC0C1C4F1F6A0082BA25 /* CoreAnimationTestVC.xib in Resources */,
+				F57AC7091E2B869700FA4020 /* AdaptiveUITest1.xib in Resources */,
 				F52C38321BE8FDD000C57DE8 /* MainViewController.xib in Resources */,
 				CB0BD2CF1E16410700A4FD67 /* AnnotateImage.xib in Resources */,
 				CB26A4651D3DB9C300DFA719 /* CALayerTestVC.xib in Resources */,
@@ -1284,6 +1331,7 @@
 				F5451B181CDCEC5500B862E0 /* FMDBVC.xib in Resources */,
 				86AFEC251C4F215D0082BA25 /* GaoDeMapVC.xib in Resources */,
 				86AFEC2C1C4F215D0082BA25 /* StaticAnnotationTest.xib in Resources */,
+				F5171C651EC2FD4C00C7DBE0 /* TouchIDViewController.xib in Resources */,
 				CBBFD24B1E02821B002A88A6 /* TestCoreDataVC.xib in Resources */,
 				CB18653A1D49E75300B4CD44 /* LayerHitTestVC.xib in Resources */,
 				86AFEBEC1C4C7D0E0082BA25 /* PullDownMenuTest.xib in Resources */,
@@ -1378,6 +1426,7 @@
 				CB44A1841E1217EE001C072E /* Card+CoreDataProperties.m in Sources */,
 				CB1865341D499C0F00B4CD44 /* CATransactionTestVC.m in Sources */,
 				CB26A47E1D3DE27E00DFA719 /* LayerDrawWithLIBCG.m in Sources */,
+				F5171C641EC2FD4C00C7DBE0 /* TouchIDViewController.m in Sources */,
 				F5451AFC1CDCE95700B862E0 /* ProvinceVC2.m in Sources */,
 				CBFB25D11E1E2A340096E1E4 /* DownLoadFont.m in Sources */,
 				CB18652D1D48834800B4CD44 /* TextLayerLabel.m in Sources */,
@@ -1408,6 +1457,7 @@
 				CB4FCF9B1D6EC8B6005CAF6D /* CKShimmerLabel.m in Sources */,
 				86AFEC2D1C4F215D0082BA25 /* ZAnnotation.m in Sources */,
 				CB4FCF8C1D6C25CE005CAF6D /* AnimationTemplate.m in Sources */,
+				F57AC7081E2B869700FA4020 /* AdaptiveUITest1.m in Sources */,
 				F52C38311BE8FDD000C57DE8 /* MainViewController.m in Sources */,
 				CB8D02CF1F1467C600CC089E /* RunTimeTestViewController.m in Sources */,
 				86AFEC291C4F215D0082BA25 /* MapViewTestVC.m in Sources */,
@@ -1426,6 +1476,7 @@
 				F508B8CA1CAE1B6A008A889B /* WGS84TOGCJ02.m in Sources */,
 				CB4FCF341D6AD87A005CAF6D /* CMUILabel.m in Sources */,
 				CBBFD2901E02866F002A88A6 /* Model.xcdatamodeld in Sources */,
+				F5171C711ECC455B00C7DBE0 /* LZRelayoutButton.m in Sources */,
 				F5451B1B1CDCECBB00B862E0 /* ZTabBarController.m in Sources */,
 				CBBFD2CF1E079047002A88A6 /* Teacher+CoreDataProperties.m in Sources */,
 				CBE0CFA31E6808B20027DAD2 /* SearchResultController.m in Sources */,
@@ -1583,7 +1634,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = P8HMCUF5JG;
+				DEVELOPMENT_TEAM = S9U2QFU9H4;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1607,7 +1658,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = P8HMCUF5JG;
+				DEVELOPMENT_TEAM = S9U2QFU9H4;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
