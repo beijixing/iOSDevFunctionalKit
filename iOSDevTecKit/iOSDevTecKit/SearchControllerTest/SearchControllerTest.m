@@ -7,8 +7,8 @@
 //
 
 #import "SearchControllerTest.h"
-
-@interface SearchControllerTest ()<UISearchBarDelegate, UISearchResultsUpdating>
+#import "SearchResultController.h"
+@interface SearchControllerTest ()<UISearchBarDelegate>
 @property(nonatomic, strong) NSMutableArray *searchList;
 @property(nonatomic, strong) NSMutableArray *dataList;
 @property(nonatomic, strong) UISearchController *searchController;
@@ -30,8 +30,10 @@
 
 
 -(void)initSearchController {
-    _searchController = [[UISearchController alloc] initWithSearchResultsController:nil];
-    _searchController.searchResultsUpdater = self;
+    
+    SearchResultController *resultCtrl = [[SearchResultController alloc] init];
+    _searchController = [[UISearchController alloc] initWithSearchResultsController:resultCtrl];
+    _searchController.searchResultsUpdater = resultCtrl;
     _searchController.dimsBackgroundDuringPresentation = NO;
     _searchController.hidesNavigationBarDuringPresentation = NO;
     _searchController.searchBar.frame = CGRectMake(self.searchController.searchBar.frame.origin.x, self.searchController.searchBar.frame.origin.y, self.searchController.searchBar.frame.size.width, 44.0);
@@ -111,24 +113,13 @@
     }
     
     if (self.searchController.active) {
-        cell.textLabel.text = self.searchList[indexPath.row];
+//        cell.textLabel.text = self.searchList[indexPath.row];
     }else {
         cell.textLabel.text = self.dataList[indexPath.row];
     }
     return cell;
 }
 
--(void)updateSearchResultsForSearchController:(UISearchController *)searchController {
-    NSString *searchString = [self.searchController.searchBar text];
-    NSPredicate *preicate = [NSPredicate predicateWithFormat:@"SELF CONTAINS[c] %@", searchString];
-    if (self.searchList!= nil) {
-        [self.searchList removeAllObjects];
-    }
-    //过滤数据
-    self.searchList= [NSMutableArray arrayWithArray:[_dataList filteredArrayUsingPredicate:preicate]];
-    //刷新表格
-    [self.dataTableView reloadData];
-}
 
 
 - (BOOL)searchBarShouldBeginEditing:(UISearchBar *)searchBar{

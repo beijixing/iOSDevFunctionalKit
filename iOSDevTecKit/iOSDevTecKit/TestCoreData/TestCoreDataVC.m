@@ -12,6 +12,7 @@
 #import "Card.h"
 #import "Teacher.h"
 #import "Course.h"
+#import "MJExtension.h"
 
 @interface TestCoreDataVC ()
 //数据模型
@@ -34,9 +35,44 @@
 //    [self inheritateOperation];
     
 //    [self addData_manyToMany];
-    [self queryData_manyToMany];
+//    [self queryData_manyToMany];
 //    [self addData_oneToMany];
-    [self queryData];
+//    [self queryData];
+    
+    [self addPerson];
+}
+
+- (void)addPerson {
+    NSDictionary *dataDict = @{
+                               @"name":@"张三",
+                               @"card":@[
+                                       @{
+                                       @"name":@"红桃",
+                                       },
+                                       @{
+                                           @"name":@"黑桃",
+                                        },
+                                       @{
+                                           @"name":@"方桃",
+                                        },
+                                       @{
+                                           @"name":@"梅花",
+                                        },
+                                ],
+                               };
+    
+    // 这个Demo仅仅提供思路，具体的方法参数需要自己创建
+    
+    Person *person = [Person mj_objectWithKeyValues:dataDict context:self.managedObjectContext];
+    
+    // 利用CoreData保存模型
+    NSError *error;
+    [self.managedObjectContext save:&error];
+    NSLog(@"error = %@", error.localizedDescription);
+    
+    for (Card *object in person.card) {
+        NSLog(@"cardNumber=%@", [object valueForKey:@"number"]);
+    }
 }
 
 
@@ -183,8 +219,8 @@
     // 设置要查询的实体
     request.entity = [NSEntityDescription entityForName:@"Person" inManagedObjectContext:self.managedObjectContext];
     // 设置排序（按照age降序）
-    NSSortDescriptor *sort = [NSSortDescriptor sortDescriptorWithKey:@"age" ascending:NO];
-    request.sortDescriptors = [NSArray arrayWithObject:sort];
+//    NSSortDescriptor *sort = [NSSortDescriptor sortDescriptorWithKey:@"age" ascending:NO];
+//    request.sortDescriptors = [NSArray arrayWithObject:sort];
     // 设置条件过滤(搜索name中包含字符串"Itcast-1"的记录，注意：设置条件过滤时，数据库SQL语句中的%要用*来代替，所以%Itcast-1%应该写成*Itcast-1*)
     // NSPredicate *predicate = [NSPredicate predicateWithFormat:@"name like %@", @"*Itcast-1*"];
     //request.predicate = predicate;
@@ -239,7 +275,7 @@
 
 - (NSManagedObjectContext *)managedObjectContext {
     if (!_managedObjectContext) {
-        _managedObjectContext = [[NSManagedObjectContext alloc] init];
+        _managedObjectContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
         _managedObjectContext.persistentStoreCoordinator = self.persistentStoreCoordinator;
     }
     return _managedObjectContext;

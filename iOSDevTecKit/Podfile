@@ -3,15 +3,13 @@ target 'iOSDevTecKit' do
 platform :ios, '7.0'
 pod "AFNetworking", "~> 2.6.3"
 
-platform :ios, '7.0'
+
 pod "FMDB", "~> 2.5"
 
 pod "IQKeyboardManager", '~> 3.3.4'
 
-platform :ios, '7.0'
 pod "SDWebImage", "~> 3.7.3"
 
-platform :ios, '7.0'
 pod "YYKit", "~> 0.9.4"
 
 pod 'MMDrawerController', '~> 0.6.0'
@@ -24,7 +22,7 @@ pod 'MJRefresh', '~> 3.0.7'
 
 pod 'Masonry', '~> 0.6.3'
 
+pod 'MJExtension'
 
-
-
+pod "Aspects"
 end

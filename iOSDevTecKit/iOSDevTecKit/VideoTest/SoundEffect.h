@@ -9,5 +9,5 @@
 #import <Foundation/Foundation.h>
 
 @interface SoundEffect : NSObject
-+(void)playWithSoundFile:(NSString *)file;
++(void)playWithSoundFile:(NSString *)file fileType:(NSString *)type;
 @end

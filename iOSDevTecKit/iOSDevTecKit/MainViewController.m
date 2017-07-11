@@ -53,6 +53,7 @@
                    @"ProgramThaught",
                    @"PickerViewTest",
                    @"CoreDataTest",
+                    @"正则表达式",
                    nil];
     _moduleViewControllerDict = [NSDictionary dictionaryWithObjectsAndKeys:
                                 @[@"ZTabBarController"],
@@ -85,6 +86,8 @@
                                  @"PickerViewTest",
                                 @[@"TestCoreDataVC"],
                                   @"CoreDataTest",
+                                 @[@"RegxViewController"],
+                                 @"正则表达式",
                                 nil];
     [self initSourceDataOpenState];
     [self setupTableview];

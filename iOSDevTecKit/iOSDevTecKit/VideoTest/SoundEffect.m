@@ -15,8 +15,8 @@ void soundCompleteCallback(SystemSoundID soundID,void * clientData){
 }
 
 
-+(void)playWithSoundFile:(NSString *)fileName {
-    NSString *audioFile=[[NSBundle mainBundle] pathForResource:fileName ofType:nil];
++(void)playWithSoundFile:(NSString *)fileName fileType:(NSString *)type {
+    NSString *audioFile=[[NSBundle mainBundle] pathForResource:fileName ofType:type];
     NSURL *fileUrl=[NSURL fileURLWithPath:audioFile];
     //1.获得系统声音ID
     SystemSoundID soundID=0;
@@ -29,7 +29,6 @@ void soundCompleteCallback(SystemSoundID soundID,void * clientData){
     AudioServicesAddSystemSoundCompletion(soundID, NULL, NULL, soundCompleteCallback, NULL);
     //2.播放音频
     AudioServicesPlaySystemSound(soundID);//播放音效
-    //    AudioServicesPlayAlertSound(soundID);//播放音效并震动
-    
+//    AudioServicesPlayAlertSound(soundID);//播放音效并震动
 }
 @end

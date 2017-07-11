@@ -20,6 +20,7 @@ PODS:
   - AFNetworking/UIKit (2.6.3):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
+  - Aspects (1.4.1)
   - EGOTableViewPullRefreshAndLoadMore (1.0.4)
   - FMDB (2.6.2):
     - FMDB/standard (= 2.6.2)
@@ -27,6 +28,7 @@ PODS:
   - IQKeyboardManager (3.3.7)
   - Masonry (0.6.4)
   - MBProgressHUD (0.9.2)
+  - MJExtension (3.0.13)
   - MJRefresh (3.0.8)
   - MMDrawerController (0.6.0):
     - MMDrawerController/Core (= 0.6.0)
@@ -49,11 +51,13 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking (~> 2.6.3)
+  - Aspects
   - EGOTableViewPullRefreshAndLoadMore (~> 1.0.4)
   - FMDB (~> 2.5)
   - IQKeyboardManager (~> 3.3.4)
   - Masonry (~> 0.6.3)
   - MBProgressHUD (~> 0.9.1)
+  - MJExtension
   - MJRefresh (~> 3.0.7)
   - MMDrawerController (~> 0.6.0)
   - SDWebImage (~> 3.7.3)
@@ -61,16 +65,18 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
+  Aspects: 7595ba96a6727a58ebcbfc954497fc5d2fdde546
   EGOTableViewPullRefreshAndLoadMore: 118a0824590db042d42e08fcc442b93cebf15e73
   FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
   IQKeyboardManager: 249c3946acf61345c18b038eb50863fe2793e3a8
   Masonry: 281802d04d787ea2973179ee8bcb50500579ede2
   MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
+  MJExtension: 5932755f451458eefa24239358817f8d291240c7
   MJRefresh: fafde8f18f4afd66b434331a9beb67a6c0264056
   MMDrawerController: e3a54a5570388463ad3b36975251575b50c4e1a0
   SDWebImage: c325cf02c30337336b95beff20a13df489ec0ec9
   YYKit: 4c0dfcb4bb3205dfbb172e64ca57a50b1675d545
 
-PODFILE CHECKSUM: 13dd35347e5f745e9cfa3d98ad76f14830b3876e
+PODFILE CHECKSUM: 651bb9925b6bc6ae77f5ddbcfc590d6c53c99ec6
 
-COCOAPODS: 1.0.1
+COCOAPODS: 1.2.0.rc.1

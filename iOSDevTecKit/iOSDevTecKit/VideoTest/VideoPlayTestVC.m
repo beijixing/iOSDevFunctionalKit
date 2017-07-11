@@ -12,8 +12,9 @@
 #import <AVKit/AVKit.h>
 #import <AVFoundation/AVFoundation.h>
 #import "SoundEffect.h"
+#import "UIFactory.h"
 @interface VideoPlayTestVC ()
-
+@property (nonatomic, strong) UIView *videoView;
 @end
 
 @implementation VideoPlayTestVC
@@ -27,11 +28,14 @@
     btn2.tag = 1;
     
     UIButton *btn3 = [ToolBox createButtonWithFrame:CGRectMake(10, 80, 100, 40) titleColor:[UIColor redColor] selector:@selector(btnClick:) target:self buttonTitle:@"视频录制"];
-    btn2.tag = 2;
+    btn3.tag = 2;
     
     [self.view addSubview:btn1];
     [self.view addSubview:btn2];
     [self.view addSubview:btn3];
+    
+    self.videoView = [UIFactory createViewWith:CGRectMake(0, 200, MainScreenWidth, 200) backgroundColor:[UIColor blueColor]];
+    [self.view addSubview:self.videoView];
 }
 
 - (void)btnClick:(UIButton *)btn {
@@ -39,8 +43,8 @@
         [self openOnlineMovie];
     }else if(btn.tag == 1) {
         [self openLocalMovie];
-    }else if (btn.tag == 3) {
-        [SoundEffect playWithSoundFile:@"videoRing.caf"];
+    }else if (btn.tag == 2) {
+        [SoundEffect playWithSoundFile:@"4130" fileType:@"mp3"];
     }
 }
 
@@ -58,9 +62,15 @@
     AVPlayerViewController *movieController = [[AVPlayerViewController alloc] init];
     NSString *videoPath = [[NSBundle mainBundle]pathForResource:@"macol" ofType:@"mp4"];
     AVPlayer *player = [AVPlayer playerWithURL:[NSURL fileURLWithPath:videoPath]];
+    
     movieController.player = player;
-    [self presentViewController:movieController animated:YES completion:^{
-    }];
+//    movieController.videoBounds = CGRectMake(0, 0, MainScreenWidth, 200);
+    [player play];
+    
+    [self.videoView addSubview:movieController.view];
+    
+//    [self presentViewController:movieController animated:YES completion:^{
+//    }];
     
 }
 
